@@ -1,0 +1,39 @@
+{
+  "example": "ADHD友好家务小屋",
+  "source": "Actual completed research report; not synthetic demo data",
+  "captured_at": "2026-10-28",
+  "data_as_of": "2026-10-28",
+  "limitations": "Historical research snapshot, not a medical efficacy assessment. Market and store data may change.",
+  "screenshots": [
+    {
+      "file": "adhd-overview.jpg",
+      "section": "研究概览",
+      "sha256": "68e7c698546e3b85f39bfcf9b999dee67c179cf8307f6c607123576173f05489",
+      "format": "image/jpeg",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "file": "adhd-trends.jpg",
+      "section": "搜索兴趣走势",
+      "sha256": "e62c5d557e9b731f2336fc19d589463297c59e4cbbbb225ed8c63e5d5bbdc60a",
+      "format": "image/jpeg",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "file": "adhd-competitors.jpg",
+      "section": "竞品四象限",
+      "sha256": "6971658f84defb38f8eca1cc0ff32e9a034ac580950de74c9e18fd9f8b73380d",
+      "format": "image/jpeg",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    }
+  ]
+}

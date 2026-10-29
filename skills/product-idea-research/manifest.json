@@ -1,6 +1,6 @@
 {
   "name": "product-idea-research",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "owner": "Project maintainer",
   "updated_at": "2026-10-28",
   "status": "active",
@@ -12,6 +12,8 @@
   "skill_archetype": "library",
   "target_platforms": [
     "openai",
+    "claude",
+    "agent-skills",
     "generic"
   ],
   "factory_components": [

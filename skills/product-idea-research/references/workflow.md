@@ -2,7 +2,7 @@
 
 ## 0. 中性brief与能力体检
 
-记录idea原文、US、平台、人群、个人资源约束、材料和as_of，区分用户假设，不传旧结论。新run保留快照。加载Agent Reach、web-access与适用的宿主浏览器规范，运行preflight；Skill不授予权限。公开只读，不读Cookie、购买、外发或写PRD。
+记录idea原文、US、平台、人群、个人资源约束、材料和as_of，区分用户假设，不传旧结论。新run保留快照。加载Agent Reach与适用的宿主浏览器规范；环境有web-access规则时遵守，不将这个本地辅助Skill当成跨宿主必需依赖。运行preflight；Skill不授予权限。公开只读，不读Cookie、购买、外发或写PRD。
 
 ## 1. 第一批三条隔离研究线
 

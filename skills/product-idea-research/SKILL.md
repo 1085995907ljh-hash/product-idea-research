@@ -1,11 +1,15 @@
 ---
 name: product-idea-research
+license: UNLICENSED
 description: 为个人独立 AI 开发者调研或筛选美国产品 idea，挖掘社交痛点、市场走势与美国用户习惯，对照竞品功能及好差评，判断能否差异化。总监派隔离研究员，给5分制判断、推荐方向与MVP主攻点，交付研究概览、市场调研、竞品、产品研究四部分中文HTML和Markdown。适用于一句话想法或已有research的深入核验。不用于完整PRD、UI设计、详细技术方案或开发。
+compatibility: Python 3.10+, Agent Reach, file/shell/public-web tools. Browser and isolated subagents depend on host.
 ---
 
 # 独立开发者产品调研
 
 帮一个人判断：**这个想法行不行、能不能做、该不该投入；更好的切入点是什么。** 默认美国消费者市场，平台随 idea 判断，未指定时先看 iOS；中文解释、美元计价。以用户约束为准。本包独立于旧 BRD、PRD 和产品系统，不读取它们作为工作流。
+
+先读 [宿主适配](references/agent-compatibility.md)。资源相对本次加载的 `<SKILL_DIR>` 定位；按宿主真实工具执行，不假定Codex路径或权限。
 
 ## 输入和范围
 
@@ -63,7 +67,7 @@ python3 <SKILL_DIR>/scripts/report.py validate <RUN_DIR>
 python3 <SKILL_DIR>/scripts/report.py render <RUN_DIR>
 ```
 
-默认v5 research.json同源生成离线HTML、Markdown和ZIP，使用 [模板](assets/brief.html)、[样式](assets/brief.css) 与 [脚本](assets/brief.js)。左侧四章各带子目录；正文关键来源可点击，概览无链接。图标内嵌、功能表局部横滑、趋势可按组/窗口/关键词切换。MD保留同样四部分与逐家口碑/方向；JSON保存完整证据链。来源总表默认折叠且不占目录。下载放顶部，底部不放批准 / 继续按钮，讨论在AI对话里。优先在右侧打开。v1–v4继续按历史契约渲染，不静默重排或重算旧报告。
+默认v5 research.json同源生成离线HTML、Markdown和ZIP，使用 [模板](assets/brief.html)、[样式](assets/brief.css) 与 [脚本](assets/brief.js)。左侧四章各带子目录；正文关键来源可点击，概览无链接。图标内嵌、功能表局部横滑、趋势可按组/窗口/关键词切换。MD保留同样四部分与逐家口碑/方向；JSON保存完整证据链。来源总表默认折叠且不占目录。下载放顶部，底部不放批准 / 继续按钮，讨论在AI对话里。宿主有右侧预览时优先打开；否则交付HTML绝对路径，按现有能力在浏览器查看，不假装已打开。v1–v4继续按历史契约渲染，不静默重排或重算旧报告。
 
 交付前核对事实引用、分数与建议的一致性；计数正文长度，浏览器验证1440/390宽度、四章子目录、概览无链接、图标 / 四象限、表格、趋势与真实下载。最终回复先说主要判断，再给HTML/MD/ZIP及实际验证；不能把结构校验当市场验证。
 

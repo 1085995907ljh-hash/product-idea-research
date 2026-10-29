@@ -8,6 +8,9 @@ packages/
 /product-idea-research-*-source.zip
 /dist/*
 !/dist/product-idea-research-v0.5.0.zip
+!/dist/product-idea-research-v0.6.0.zip
+!/dist/product-idea-research-v0.6.0-flat.zip
+!/dist/SHA256SUMS
 /skills/product-idea-research/dist/
 /skills/product-idea-research/registry/
 /skills/product-idea-research/reports/*

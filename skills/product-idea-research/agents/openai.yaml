@@ -2,6 +2,6 @@ interface:
   display_name: "产品调研"
   short_description: "深入调研美国idea：多平台需求、多词趋势、分类竞品与3–5个方向"
   brand_color: "#2257A0"
-  default_prompt: "使用 $product-idea-research 研究我的想法。隔离研究员取证，总监交付四章HTML/MD：无链接短概览与5分制；市场含逐平台痛点、新旧需求、多组关键词趋势；竞品含分类目录、头部/相似/新品重点、任务组功能和逐家口碑；产品研究推荐3–5个方向，分别讲用途、痛点、差异、MVP、开发维护成本与技术依赖。主线简明、详细研究分层可读，不写完整PRD。"
+  default_prompt: "使用 $product-idea-research 调研我的想法，判断美国市场是否值得独立开发者进入，交付四章可视化报告、评分和建议。"
 policy:
   allow_implicit_invocation: true

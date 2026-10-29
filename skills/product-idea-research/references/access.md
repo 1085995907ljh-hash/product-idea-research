@@ -5,7 +5,7 @@ Apple辅助脚本优先使用Python HTTPS；若本机Python缺少信任证书，
 必须依赖Agent Reach做研究路由，不复制其账号配置。要求只读公网、执行可信CLI、读输入文件、写本次目录；动态/登录内容需已有浏览器授权与站点登录。Skill不能自动给宿主提权。
 
 1. 定位并阅读当前Agent Reach SKILL.md。没有则标not_configured、查官方安装，不远程管道执行。
-2. `agent-reach doctor --json`；preflight.py保存状态；按active_backend读取对应search/social/web参考。开始时说明后端。
+2. 执行本包preflight.py保存状态；它调用`agent-reach doctor`，兼容JSON或文本结果。具体参数和路由以当前安装版本为准，不假定所有版本都有`--json`或active_backend字段。按当前Agent Reach指引读取对应search/social/web参考；开始时说明实际后端。
 3. 真正读取所需资料才算本轮可用；doctor的ok不证明额度、登录和目标页可用。失败按文档有限重试，保留原因。
 4. 美国消费者优先本地英语原始资料，不为多平台而搜无关中文内容。公开商店API适配器仅取美区元数据/评论，不买App、不登录、不估收入。
 
