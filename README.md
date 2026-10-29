@@ -1,4 +1,4 @@
-# Indie Idea Research
+# product-idea-research
 
 面向个人独立 AI 开发者的美国产品调研 Skill。输入一个 idea，获得有来源的市场、社交需求和竞品分析，以及明确的投入建议。
 
@@ -13,14 +13,14 @@
 
 ## 使用
 
-仓库名为 `indie-idea-research`，Skill 调用名保持 `product-idea-research`。
+仓库名和 Skill 调用名统一为 `product-idea-research`。
 
 ### 在 Codex 中安装
 
 ```bash
-git clone https://github.com/1085995907ljh-hash/indie-idea-research.git
+git clone https://github.com/1085995907ljh-hash/product-idea-research.git
 mkdir -p ~/.codex/skills
-cp -R indie-idea-research/skills/product-idea-research ~/.codex/skills/
+cp -R product-idea-research/skills/product-idea-research ~/.codex/skills/
 ```
 
 已有同名 Skill 时请先比较版本，避免覆盖自己的修改。也可解压 [v0.5.0 安装包](dist/product-idea-research-v0.5.0.zip)，将其中 `product-idea-research` 文件夹放到宿主 Skill 目录。
