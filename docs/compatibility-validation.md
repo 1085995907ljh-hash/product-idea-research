@@ -10,6 +10,7 @@
 | --- | --- | --- |
 | Codex 项目级安装 | 通过，50个资源文件逐字节一致 | CLI 安装路由、目录和资源完整性 |
 | Claude Code 项目级安装 | 通过，50个资源文件逐字节一致 | CLI 安装路由、目录和资源完整性 |
+| GitHub公开仓库远程安装 | Codex / Claude Code均通过，50个文件与源码一致，安装后渲染通过 | 远程发现嵌套Skill目录、下载与实际安装，不只验证本地副本 |
 | Codex / Claude Code 全局安装路由 | 在隔离的测试用户目录通过，分别落入 `.agents/skills/` 与 `.claude/skills/` | `-g -a codex -a claude-code --copy` 的目录路由及完整复制 |
 | 安装后的脚本 | 两个宿主目录各通过 init → validate → render | 安装资源足以生成 HTML、MD、JSON、分享 ZIP |
 | 带目录 ZIP / Flat ZIP | 各50个文件，内容一一相同 | 两种布局仅目录层级有区别 |
@@ -22,7 +23,7 @@
 
 全局安装测试仅在子 Node 进程中将 `os.homedir()` 映射到临时目录；没有改 `$HOME`、`$CODEX_HOME` 或真实用户配置。研究脚本烟测使用未研究的空白案例，未知不会转为零需求或入场结论。
 
-公开仓库的远程安装检查与提交信息在发布时核对；不把本地安装替代远程发现检查。
+远程安装来源为`1085995907ljh-hash/product-idea-research`的默认分支develop，验证提交`6c01345aac522de869eb9359a8ae78b237fd71bb`；远程SHA与本地一致。GitHub README三张图片均已在浏览器确认加载成功。该提交之后仅补充本验证记录，不改变Skill或安装包。
 
 ## 尚未验证
 
