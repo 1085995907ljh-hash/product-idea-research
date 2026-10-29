@@ -1,0 +1,143 @@
+{
+  "schema_version": "2.0.0",
+  "name": "product-idea-research",
+  "title": "独立开发者产品调研",
+  "job_to_be_done": "为个人独立 AI 开发者调研或筛选美国产品 idea，挖掘社交痛点、市场走势与美国用户习惯，对照竞品功能及好差评，判断能否差异化。总监派隔离研究员，给5分制判断、推荐方向与MVP主攻点，交付研究概览、市场调研、竞品、产品研究四部分中文HTML和Markdown。适用于一句话想法或已有research的深入核验。不用于完整PRD、UI设计、详细技术方案或开发。",
+  "trigger_surface": {
+    "description": "为个人独立 AI 开发者调研或筛选美国产品 idea，挖掘社交痛点、市场走势与美国用户习惯，对照竞品功能及好差评，判断能否差异化。总监派隔离研究员，给5分制判断、推荐方向与MVP主攻点，交付研究概览、市场调研、竞品、产品研究四部分中文HTML和Markdown。适用于一句话想法或已有research的深入核验。不用于完整PRD、UI设计、详细技术方案或开发。",
+    "should_trigger": [
+      "我想做AI摄影App，先调研美国市场是否有机会。",
+      "帮我验证一个面向美国用户的旅行打包产品想法。",
+      "深入核验这份research里的市场、竞品与付费假设。",
+      "研究或验证这个iOS消费产品idea，输出可视化报告。",
+      "我有一个健康App想法，需要产品调研和商业分析。",
+      "帮我调研现有产品的差评，找同领域机会。",
+      "继续调研这个想法，补充竞品与美国需求证据。",
+      "我是个人AI开发者，帮这个产品idea打5分制机会分，建议更好的切口和MVP主攻点。",
+      "调研美国Web工具方向，看看最近社媒热不热、竞品差评有没有能切入的缺口。",
+      "原想法太拥挤了，深入核验有没有适合独立开发者低成本验证的相邻方向。",
+      "调研这个idea在Reddit和YouTube上谁在讨论，痛点是什么，是新需求还是老需求。",
+      "深入核验竞品不同功能、定位关键词、好评差评，看看哪些切口仍未满足。",
+      "给这个产品idea做产品调研，别只看品牌搜索，要看自然需求讨论中的用户选择。"
+    ],
+    "should_not_trigger": [
+      "把这篇文章翻译成中文。",
+      "今天旧金山天气怎么样？",
+      "修复登录接口的500错误。",
+      "总结这篇报告，不需要调研。",
+      "只写MVP PRD，研究已经完成。",
+      "给我画7张iPhone UI页面。",
+      "帮我部署现有网站到Cloudflare。"
+    ],
+    "edge_cases": [
+      "调研不做了，只改稿，让这段话更自然。",
+      "研究已经通过，现在只写PRD。",
+      "生成这个产品的UI设计截图。",
+      "只调整这份报告的样式，不要重新调研。",
+      "我想写一个技术方案，市场调研已有结论。",
+      "帮我设计logo。"
+    ]
+  },
+  "workflow": {
+    "steps": [
+      "总监将输入整理为中性 brief：明确美国市场、原想法与相邻切口，分开用户事实、假设和待补证据；读取协作、深研、访问与报告契约并执行访问预检。",
+      "向三条隔离事实线并行派发中性brief：社媒需求研究痛点与现办法；竞品研究任务分类、定位与选择；市场/平台研究领域和官方分类、细分与样本演变、美国用户习惯心理、规模与真实Trends、平台技术限制和个人投入。",
+      "前三条事实线返回后，新的功能与口碑研究员按用户任务链分组核验8–10款重点的能力；另逐家分析总评分、文字样本、好评价值、差评摩擦、当前解决状态与竞争机会。",
+      "总监去重交叉核验，用同一六维权重评原案和相邻方向；独立呈现未知与证据把握，明确进入/不进入/观望、建议、更好方向及研究级MVP主攻，不以实验清单代替判断。",
+      "只对可能改变决策的未知做有界补查，再由独立挑战者检查最强反证、替代解释与推荐是否越过证据；无法隔离上下文时明确披露限制。",
+      "以v5 research.json生成四章HTML/MD：短概览无链接；市场逐平台痛点/需求新旧和2–4组8–15关键词真实趋势；竞品分类全景、头部/相似/新品重点、任务组功能及逐家口碑；产品研究给3–5个方向，分别说明痛点/用途/MVP/差异/开发维护成本/技术依赖。主线约五分钟，细节分层阅读，不用全文字数砍深度。兼容v1–v4，验证宽窄屏与真实下载。"
+    ],
+    "decision_points": [
+      "一句话想法先拆两至三个相邻切口；已有完整想法或 research 先分离事实、假设和缺口。完整 PRD、UI、技术方案或开发不属于本 Skill 的交付范围。",
+      "访问受当前宿主权限约束；blocked、unavailable 或 partial coverage 作为覆盖缺口保留，不得转成零需求、没有竞品或负面商业判断。",
+      "有原始趋势点才绘制趋势；没有合格自然需求样本分母时不计算品牌提及百分比，品牌检索、广告及重复作者样本不得补入分母。",
+      "方向可以为零并说明原因；unknown 以中性占位暂定且证据把握独立计算，市场关键证据不足时先补证据，硬否决与评分门槛按报告契约执行。",
+      "补查只处理可能改变评分、推荐或 MVP 的关键未知；研究员共识不替代来源证据，结构验证通过不等于事实已获核验。"
+    ],
+    "failure_modes": [
+      "向研究员泄露预设结论、让其替总监出完整报告或把多位研究员共识当成独立证据。",
+      "把访问失败、样本不足或未知表现写成无需求、无竞品、已验证中等表现或明确商业否决。",
+      "把同作者或同源转述重复计为独立痛点，把品牌搜索、广告或创作者内容混入自然品牌提及分母。",
+      "以官网未提及推断功能不存在，以评分代替市场份额，以少量评价推断整个市场满意度，或未匹配产品和版本就引用评价。",
+      "为凑方向或竞品数量编造事实、将研究建议扩写成完整产品开发方案，或让方向使用不同评分尺子。",
+      "用无原始数据的装饰趋势图、HTML 与 Markdown 不同来源、失效的逐行引用或未核对实际字节的下载交付。",
+      "以完整研究日志淹没读者，概览放链接，四象限伪造份额或精确坐标，0评级当0用户，美国护肤调查外推为App订阅需求，声称未实测阅读时长。"
+    ]
+  },
+  "resources": {
+    "references": [
+      "references/access.md",
+      "references/collaboration.md",
+      "references/deep-data-contract.md",
+      "references/deep-research.md",
+      "references/evidence-scoring.md",
+      "references/methodology-map.md",
+      "references/methodology-v2.md",
+      "references/report-contract.md",
+      "references/report-design.md",
+      "references/workflow.md",
+      "references/briefing-contract.md",
+      "references/depth-contract.md"
+    ],
+    "scripts": [
+      "scripts/apple.py",
+      "scripts/preflight.py",
+      "scripts/report.py",
+      "scripts/research_details.py",
+      "scripts/briefing.py",
+      "scripts/deep_briefing.py"
+    ],
+    "assets": [
+      "assets/report.css",
+      "assets/report.html",
+      "assets/report.js",
+      "assets/brief.html",
+      "assets/brief.css",
+      "assets/brief.js"
+    ],
+    "reports": []
+  },
+  "eval_plan": {
+    "trigger": [
+      "evals/semantic_config.json",
+      "evals/trigger_cases.json"
+    ],
+    "output": [
+      "evals/output/cases.jsonl",
+      "evals/output/fixtures/v4-four-chapter-brief.json",
+      "evals/output/fixtures/v4-unknown-is-not-reject.json",
+      "evals/output/fixtures/v4-reject-overview-links.json",
+      "evals/output/fixtures/v3-unknown-no-directions.json",
+      "evals/output/fixtures/v3-synthetic-deep-research.json",
+      "evals/output/fixtures/v3-reject-unverified-fact.json",
+      "evals/output/fixtures/v3-reject-brand-search-denominator.json",
+      "evals/output/fixtures/v1-historical-rendering.json",
+      "evals/output/fixtures/v2-historical-rendering.json",
+      "evals/output/fixtures/v5-synthetic-deep-presentation.json",
+      "evals/output/fixtures/v5-reject-cross-product-reviews.json",
+      "evals/output/fixtures/v5-reject-keyword-group-mismatch.json"
+    ],
+    "adversarial": [],
+    "baseline": "without_skill"
+  },
+  "risk": {
+    "output_risk": "low",
+    "execution_risk": "medium",
+    "trust_boundary": "team"
+  },
+  "governance": {
+    "owner": "Project maintainer",
+    "maturity": "library",
+    "review_cadence": "quarterly",
+    "review_due": "2027-01-27"
+  },
+  "targets": [
+    "openai",
+    "generic"
+  ],
+  "source_files": [
+    "SKILL.md",
+    "manifest.json",
+    "agents/interface.yaml"
+  ]
+}

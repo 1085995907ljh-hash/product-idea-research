@@ -1,0 +1,42 @@
+{
+  "name": "product-idea-research",
+  "version": "0.5.0",
+  "owner": "Project maintainer",
+  "updated_at": "2026-10-28",
+  "status": "active",
+  "maturity_tier": "library",
+  "lifecycle_stage": "library",
+  "context_budget_tier": "library",
+  "review_cadence": "quarterly",
+  "skill_ir_source": "reports/skill-ir.json",
+  "skill_archetype": "library",
+  "target_platforms": [
+    "openai",
+    "generic"
+  ],
+  "factory_components": [
+    "references",
+    "scripts",
+    "reports",
+    "assets",
+    "evals",
+    "tests"
+  ],
+  "review_due": "2027-01-27",
+  "license": "UNLICENSED",
+  "runtime_requirements": {
+    "python": ">=3.10",
+    "agent_reach": "required; current host version",
+    "network": "public read-only",
+    "browser": "only when authorized and needed",
+    "filesystem": "input read, run directory write",
+    "permission_model": "host enforced; metadata does not grant permissions"
+  },
+  "output_contract": [
+    "research.md",
+    "report.html",
+    "research.json",
+    "research.zip"
+  ],
+  "rollback_boundary": "Remove the newly installed skill; existing skills and systems are not modified."
+}

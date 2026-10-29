@@ -1,0 +1,219 @@
+{
+  "schema_version": "product-idea-research/v2",
+  "title": "出发前，少漏带一件东西",
+  "idea": "根据行程、活动和同行人，帮助美国用户准备行李。",
+  "date": "2026-10-28",
+  "scope": "美国 / iOS / 消费者 / 独立开发者",
+  "fixture": true,
+  "status": "partial",
+  "conclusion": {
+    "verdict": "conditional",
+    "summary": "这是展示阅读与下载的合成样例，未进行真实市场研究。先比较临出发的真实任务，再决定要不要做新工具。",
+    "reasons": [
+      "现有清单可能已足够。",
+      "需要查清谁会因协作或装备遗漏受影响。",
+      "所有分项未知；2.5占位暂分不代表有中等机会。"
+    ]
+  },
+  "sources": [],
+  "evidence": [],
+  "competitors": [],
+  "trends": [],
+  "glossary": [
+    {
+      "term": "暂定分",
+      "meaning": "未知项临时按2.5占位，不代表机会已得到验证。"
+    }
+  ],
+  "payment_evidence_ids": [],
+  "hard_vetoes": [],
+  "scorecard": [
+    {
+      "dimension": "attention",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    },
+    {
+      "dimension": "competition",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    },
+    {
+      "dimension": "gap",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    },
+    {
+      "dimension": "timing",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    },
+    {
+      "dimension": "validation",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    },
+    {
+      "dimension": "solo_cost",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    }
+  ],
+  "sections": [
+    {
+      "id": "signals",
+      "title": "需求与近期话题",
+      "status": "partial",
+      "summary": "未取得近期社交讨论和真实行为；不能声称话题很火。",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "未取得近期社交讨论和真实行为；不能声称话题很火。",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "market",
+      "title": "市场规模与走势",
+      "status": "partial",
+      "summary": "可服务人群与市场走势未知，不用旅行总人数代替这个细分市场。",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "可服务人群与市场走势未知，不用旅行总人数代替这个细分市场。",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "competition",
+      "title": "竞品与差评",
+      "status": "partial",
+      "summary": "未检索；研究时清单直接放在这里，并核对现有产品是否已解决。",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "未检索；研究时清单直接放在这里，并核对现有产品是否已解决。",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "environment",
+      "title": "外部环境与平台",
+      "status": "partial",
+      "summary": "平台和数据约束待查；只研究会改变入场判断的内容。",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "平台和数据约束待查；只研究会改变入场判断的内容。",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "validation",
+      "title": "先验证什么",
+      "status": "partial",
+      "summary": "先观察现有准备过程，再用同一份真实行程做轻量对照。",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "先观察现有准备过程，再用同一份真实行程做轻量对照。",
+          "source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "title": "依据与缺口",
+      "status": "partial",
+      "summary": "阅读样例，非真实市场调研。没有访谈、竞品实测、付款和趋势采集。",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "阅读样例，非真实市场调研。没有访谈、竞品实测、付款和趋势采集。",
+          "source_ids": []
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "recommendation": "先研究，不推荐据此开发。",
+    "mvp_focus": "假设切口：同行人的关键物品交接。尚未证明比共享备忘录更好。",
+    "main_risk": "需求、热度、竞品缺口和付费均未核实。",
+    "next_step": "让用户回顾最近一次出行并演示旧清单，观察遗漏与协调代价，不只问是否喜欢这个想法。",
+    "source_ids": []
+  },
+  "directions": [
+    {
+      "id": "shared-packing",
+      "name": "同行人的物品交接（待研究）",
+      "stance": "explore",
+      "target_user": "一起旅行、分工打包的人，情境待核实。",
+      "change": "假设从个人清单缩小到同行协作，不代表市场更好。",
+      "mvp_focus": "只验证关键物品由谁准备、是否已经带上。",
+      "why": "假设协调可能比清单生成更有代价；目前没有证据。",
+      "first_test": "观察一次真实交接，与共享备忘录比较。",
+      "main_risk": "现有共享清单可能完全足够。",
+      "source_ids": [],
+      "scorecard": [
+        {
+          "dimension": "attention",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        },
+        {
+          "dimension": "competition",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        },
+        {
+          "dimension": "gap",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        },
+        {
+          "dimension": "timing",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        },
+        {
+          "dimension": "validation",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        },
+        {
+          "dimension": "solo_cost",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        }
+      ]
+    }
+  ]
+}

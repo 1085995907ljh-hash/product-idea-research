@@ -1,0 +1,211 @@
+{
+  "schema_version": "product-idea-research/v2",
+  "title": "合成回归夹具：不是市场调研",
+  "idea": "只测试契约，不代表任何真实产品",
+  "date": "2026-10-28",
+  "scope": "美国 / iOS / 消费者 / 独立开发者",
+  "fixture": true,
+  "status": "partial",
+  "conclusion": {
+    "verdict": "conditional",
+    "summary": "尚未开始研究，不能据此判断想法成立。",
+    "reasons": []
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Synthetic fixture product descriptions",
+      "url": "https://example.org/fixtures/S1",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    },
+    {
+      "id": "S2",
+      "title": "Synthetic fixture review records",
+      "url": "https://example.org/fixtures/S2",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    },
+    {
+      "id": "S3",
+      "title": "Synthetic fixture natural discussion records",
+      "url": "https://example.org/fixtures/S3",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    }
+  ],
+  "evidence": [],
+  "competitors": [],
+  "trends": [],
+  "glossary": [],
+  "payment_evidence_ids": [],
+  "hard_vetoes": [],
+  "scorecard": [
+    {
+      "dimension": "attention",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "supported"
+    },
+    {
+      "dimension": "competition",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "supported"
+    },
+    {
+      "dimension": "gap",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "supported"
+    },
+    {
+      "dimension": "timing",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "supported"
+    },
+    {
+      "dimension": "validation",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "supported"
+    },
+    {
+      "dimension": "solo_cost",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "supported"
+    }
+  ],
+  "sections": [
+    {
+      "id": "signals",
+      "title": "需求与近期话题",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "market",
+      "title": "市场规模与走势",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "competition",
+      "title": "竞品与差评",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "environment",
+      "title": "外部环境与平台",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "validation",
+      "title": "先验证什么",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "limitations",
+      "title": "依据与缺口",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    }
+  ],
+  "decision": {
+    "recommendation": "尚未开展研究，先收集证据再作入场判断。",
+    "mvp_focus": "尚未确定，等待需求与缺口研究。",
+    "main_risk": "核心假设和证据覆盖尚未核实。",
+    "next_step": "先查找目标用户的近期需求表达与反证。",
+    "source_ids": []
+  },
+  "directions": [
+    {
+      "id": "pending-research",
+      "name": "待研究的相邻方向",
+      "stance": "explore",
+      "target_user": "尚未核实。",
+      "change": "尚未研究相邻切口。",
+      "mvp_focus": "等待需求证据后界定。",
+      "why": "当前没有依据比较方向，评分均为未知。",
+      "first_test": "先收集真实用户表达，判断是否值得提出方向假设。",
+      "main_risk": "尚无已核实的方向依据。",
+      "source_ids": [],
+      "scorecard": [
+        {
+          "dimension": "attention",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        },
+        {
+          "dimension": "competition",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        },
+        {
+          "dimension": "gap",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        },
+        {
+          "dimension": "timing",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        },
+        {
+          "dimension": "validation",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        },
+        {
+          "dimension": "solo_cost",
+          "value": null,
+          "reason": "未研究",
+          "source_ids": [],
+          "certainty": "unknown"
+        }
+      ]
+    }
+  ]
+}

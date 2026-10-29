@@ -1,0 +1,616 @@
+{
+  "schema_version": "product-idea-research/v3",
+  "title": "合成回归夹具：不是市场调研",
+  "idea": "只测试契约，不代表任何真实产品",
+  "date": "2026-10-28",
+  "scope": "美国 / iOS / 消费者 / 独立开发者",
+  "fixture": true,
+  "status": "partial",
+  "conclusion": {
+    "verdict": "conditional",
+    "summary": "合成案例：原任务已存在，仍需验证一个小缺口。",
+    "reasons": [
+      "合成讨论包含反证，不代表真实需求频率。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Synthetic fixture product descriptions",
+      "url": "https://example.org/fixtures/S1",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    },
+    {
+      "id": "S2",
+      "title": "Synthetic fixture review records",
+      "url": "https://example.org/fixtures/S2",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    },
+    {
+      "id": "S3",
+      "title": "Synthetic fixture natural discussion records",
+      "url": "https://example.org/fixtures/S3",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    }
+  ],
+  "evidence": [],
+  "competitors": [
+    {
+      "id": "C1",
+      "name": "合成工具 Alpha",
+      "kind": "direct",
+      "summary": "合成替代方案，不是真实产品。",
+      "pricing": "合成价格未知；人工办法也有时间成本。",
+      "limitation": "不得当作真实竞争格局。",
+      "positioning": "合成定位：完成同一旧任务。",
+      "audience": "合成用户",
+      "category_ids": [
+        "software"
+      ],
+      "official_keywords": [
+        "合成官方词"
+      ],
+      "user_keywords": [],
+      "strengths": [
+        "合成优势：已有完整流程"
+      ],
+      "weaknesses": [
+        "合成边界：仍有人工步骤"
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C2",
+      "name": "合成工具 Beta",
+      "kind": "indirect",
+      "summary": "合成替代方案，不是真实产品。",
+      "pricing": "合成价格未知；人工办法也有时间成本。",
+      "limitation": "不得当作真实竞争格局。",
+      "positioning": "合成定位：完成同一旧任务。",
+      "audience": "合成用户",
+      "category_ids": [
+        "software"
+      ],
+      "official_keywords": [
+        "合成官方词"
+      ],
+      "user_keywords": [],
+      "strengths": [
+        "合成优势：已有完整流程"
+      ],
+      "weaknesses": [
+        "合成边界：仍有人工步骤"
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C3",
+      "name": "合成人工表格",
+      "kind": "manual",
+      "summary": "合成替代方案，不是真实产品。",
+      "pricing": "合成价格未知；人工办法也有时间成本。",
+      "limitation": "不得当作真实竞争格局。",
+      "positioning": "合成定位：完成同一旧任务。",
+      "audience": "合成用户",
+      "category_ids": [
+        "manual"
+      ],
+      "official_keywords": [
+        "合成官方词"
+      ],
+      "user_keywords": [],
+      "strengths": [
+        "合成优势：已有完整流程"
+      ],
+      "weaknesses": [
+        "合成边界：仍有人工步骤"
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "trends": [],
+  "glossary": [],
+  "payment_evidence_ids": [],
+  "hard_vetoes": [],
+  "scorecard": [
+    {
+      "dimension": "attention",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    },
+    {
+      "dimension": "competition",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    },
+    {
+      "dimension": "gap",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    },
+    {
+      "dimension": "timing",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    },
+    {
+      "dimension": "validation",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    },
+    {
+      "dimension": "solo_cost",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    }
+  ],
+  "sections": [
+    {
+      "id": "signals",
+      "title": "需求与近期话题",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "market",
+      "title": "市场规模与走势",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "competition",
+      "title": "竞品与差评",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "environment",
+      "title": "外部环境与平台",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "validation",
+      "title": "先验证什么",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "limitations",
+      "title": "依据与缺口",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    }
+  ],
+  "decision": {
+    "recommendation": "仅演示先验证缺口的建议。",
+    "mvp_focus": "合成 MVP：仅测试一个任务结果。",
+    "main_risk": "这是一组虚构资料，不能支持真实入场决策。",
+    "next_step": "在真实研究中重新核验用户与替代方案。",
+    "source_ids": [
+      "S1",
+      "S3"
+    ]
+  },
+  "directions": [
+    {
+      "id": "narrow-task",
+      "name": "合成方向：一个整理步骤",
+      "stance": "recommended",
+      "target_user": "合成重复任务用户",
+      "change": "合成原案收窄为一个步骤。",
+      "mvp_focus": "仅验证减少一次重复操作。",
+      "why": "合成证据只能演示结构，不支持真实产品建议。",
+      "first_test": "真实研究应重新寻找独立用户并做小测试。",
+      "main_risk": "尚未验证真实需求。",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "scorecard": [
+        {
+          "dimension": "attention",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "competition",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "gap",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "timing",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "validation",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "solo_cost",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        }
+      ],
+      "pain_ids": [
+        "pain"
+      ],
+      "competitor_ids": [
+        "C1",
+        "C3"
+      ],
+      "existing_alternatives": "合成工具 Alpha 与人工表格。",
+      "remaining_gap": "合成缺口：重复录入。"
+    }
+  ],
+  "no_directions_reason": "尚未研究真实痛点与现有替代，当前没有依据提出相邻方向。",
+  "social_research": {
+    "summary": "合成平台材料仅用于合同回归，不能推断实际需求强弱。",
+    "platforms": [
+      {
+        "id": "forum",
+        "name": "合成论坛",
+        "status": "available",
+        "query_scope": "合成需求查询；未按品牌筛选",
+        "time_range": "2026-10-01 至 2026-10-07（虚构）",
+        "discussion": "合成讨论同时出现时间成本问题与无需新工具的反证。",
+        "assessment": "仅演示多位作者的材料组织。",
+        "limitation": "全部内容均为 synthetic fixture。",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "id": "video",
+        "name": "合成短视频平台",
+        "status": "blocked",
+        "query_scope": "尚未取得原始材料",
+        "time_range": "尚未核实",
+        "discussion": "未取得讨论材料，不能称没有讨论。",
+        "assessment": "访问受阻不构成没有需求。",
+        "limitation": "无可用原帖，不补造样本。",
+        "source_ids": []
+      }
+    ],
+    "posts": [
+      {
+        "id": "P1",
+        "platform_id": "forum",
+        "author_key": "synthetic-author-a",
+        "published_at": "2026-10-01",
+        "region": "US（合成身份）",
+        "state": "verified",
+        "query_origin": "need",
+        "behavior": "problem",
+        "context": "合成作者 A：现有工具需要反复手工整理。",
+        "quote": null,
+        "brand_mentions": [
+          "C1"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "id": "P2",
+        "platform_id": "forum",
+        "author_key": "synthetic-author-b",
+        "published_at": "2026-10-01",
+        "region": "US（合成身份）",
+        "state": "verified",
+        "query_origin": "need",
+        "behavior": "problem",
+        "context": "合成作者 B：手工办法够用，不愿安装新软件。",
+        "quote": null,
+        "brand_mentions": [],
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "id": "P3",
+        "platform_id": "forum",
+        "author_key": "synthetic-author-a",
+        "published_at": "2026-10-01",
+        "region": "US（合成身份）",
+        "state": "verified",
+        "query_origin": "need",
+        "behavior": "problem",
+        "context": "同一合成作者 A 再次提及两个品牌，须去重。",
+        "quote": null,
+        "brand_mentions": [
+          "C1",
+          "C2"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "id": "P4",
+        "platform_id": "forum",
+        "author_key": "synthetic-author-c",
+        "published_at": "2026-10-01",
+        "region": "US（合成身份）",
+        "state": "verified",
+        "query_origin": "need",
+        "behavior": "problem",
+        "context": "合成作者 C 比较两个已有办法。",
+        "quote": null,
+        "brand_mentions": [
+          "C1",
+          "C2"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "id": "pain",
+        "name": "合成痛点：重复整理",
+        "audience": "合成用户",
+        "situation": "虚构的重复任务",
+        "current_workaround": "合成现办法：人工表格",
+        "problem": "合成问题：重复录入",
+        "consequence": "合成影响：额外时间成本",
+        "recurrence": "两位合成作者提供线索，不能推出总体频率。",
+        "counterevidence": "决定性合成反证：有人认为人工办法已足够。",
+        "status": "recurring",
+        "post_ids": [
+          "P1",
+          "P2"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ]
+  },
+  "need_assessment": {
+    "classification": "new_solution",
+    "novelty_reason": "合成分类演示：旧任务的新解法，不是新出现的需求。",
+    "demand_summary": "只能展示证据结构，不能判定真实需求。",
+    "existing_solutions": "合成工具 Alpha、Beta 及人工表格。",
+    "satisfaction": "部分合成用户满意，部分仍需手工整理。",
+    "remaining_gap": "合成剩余缺口：一个重复整理步骤。",
+    "original_action": "合成原案：收窄后补证据。",
+    "source_ids": [
+      "S1",
+      "S3"
+    ]
+  },
+  "competitive_analysis": {
+    "categories": [
+      {
+        "id": "software",
+        "name": "合成分类：软件流程",
+        "description": "围绕同一个任务的合成软件替代。",
+        "competitor_ids": [
+          "C1",
+          "C2"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "manual",
+        "name": "合成分类：人工办法",
+        "description": "零新增软件费不代表零时间成本。",
+        "competitor_ids": [
+          "C3"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "feature_competitor_ids": [
+      "C1",
+      "C2"
+    ],
+    "features": [
+      {
+        "id": "feature",
+        "name": "合成功能：减少重复录入",
+        "cells": [
+          {
+            "competitor_id": "C1",
+            "state": "partial",
+            "basis": "合成功能依据：仍有一个手工步骤。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "competitor_id": "C2",
+            "state": "unknown",
+            "basis": "合成功能尚未核实，不能编有或没有。",
+            "source_ids": []
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "id": "R1",
+        "competitor_id": "C1",
+        "rating": 5,
+        "published_at": "2026-10-02",
+        "version": null,
+        "summary": "合成好评：完整流程省时间。",
+        "quote": null,
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "id": "R2",
+        "competitor_id": "C1",
+        "rating": 2,
+        "published_at": "2026-10-02",
+        "version": null,
+        "summary": "合成差评：重复录入仍然费时。",
+        "quote": null,
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "review_coverage": [
+      {
+        "competitor_id": "C1",
+        "scope": "合成精选评论，非全量",
+        "time_range": "2026-10（虚构）",
+        "limitation": "两条虚构评论不代表真实用户分布。",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "competitor_id": "C2",
+        "scope": "合成精选评论，非全量",
+        "time_range": "2026-10（虚构）",
+        "limitation": "未取得评论，零条不代表无用户或无差评。",
+        "source_ids": []
+      },
+      {
+        "competitor_id": "C3",
+        "scope": "合成精选评论，非全量",
+        "time_range": "2026-10（虚构）",
+        "limitation": "未取得评论，零条不代表无用户或无差评。",
+        "source_ids": []
+      }
+    ],
+    "review_themes": [
+      {
+        "id": "positive",
+        "sentiment": "positive",
+        "theme": "合成好评主题：流程完整",
+        "task": "完成合成旧任务",
+        "impact": "合成结果：减少操作",
+        "current_status": "unknown",
+        "assessment": "合成现状未核实，不能把回复当修复验证。",
+        "competitor_ids": [
+          "C1"
+        ],
+        "review_ids": [
+          "R1"
+        ],
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "id": "negative",
+        "sentiment": "negative",
+        "theme": "合成差评主题：重复录入",
+        "task": "完成合成旧任务",
+        "impact": "合成结果：仍有时间成本",
+        "current_status": "unknown",
+        "assessment": "合成现状未核实，不能把回复当修复验证。",
+        "competitor_ids": [
+          "C1"
+        ],
+        "review_ids": [
+          "R2"
+        ],
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "mindshare": {
+      "status": "measured",
+      "summary": "仅统计合成自然讨论样本中的品牌提及，不是市场份额。",
+      "eligible_post_ids": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "limitation": "分母包含未提品牌者，同作者去重，可同时提及多个品牌；不推导销量或份额。"
+    }
+  }
+}

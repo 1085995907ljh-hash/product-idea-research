@@ -1,0 +1,7 @@
+{
+  "schema_version":"1.0",
+  "default_policy":{"require_https":true,"custom_hosts":"deny-by-default","review_rule":"Only public read-only sources; browser and Agent Reach access remain host-authorized."},
+  "scripts":{
+    "scripts/apple.py":{"purpose":"Read public US Apple metadata and review RSS; no account or purchase.","allowed_hosts":["itunes.apple.com"],"allowed_path_prefixes":["/search","/lookup","/us/rss/customerreviews/"],"requires_https":true,"custom_url_policy":"not supported","timeout_seconds":25,"auth":"none"}
+  }
+}

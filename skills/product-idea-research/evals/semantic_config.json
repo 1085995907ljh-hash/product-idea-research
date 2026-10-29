@@ -1,0 +1,5 @@
+{
+ "positive_concepts":{"product_research":{"weight":1,"phrases":["研究或验证","调研","验证一个","深入核验","产品调研","产品idea","机会分","独立开发者"]}},
+ "negative_concepts":{"exclusive_other_job":{"weight":1,"exclusive":true,"phrases":["不需要调研","不要重新调研","调研不做了","只写PRD","只写MVP PRD","只改稿","UI设计截图","UI页面","技术方案","设计logo"]}},
+ "fallback_positive_concepts":["product_research"]
+}

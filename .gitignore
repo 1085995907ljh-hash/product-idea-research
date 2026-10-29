@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.DS_Store
+packages/
+/reports/
+/verification/
+/skills/reports/
+/product-idea-research-*-source.zip
+/dist/*
+!/dist/product-idea-research-v0.5.0.zip
+/skills/product-idea-research/dist/
+/skills/product-idea-research/registry/
+/skills/product-idea-research/reports/*
+!/skills/product-idea-research/reports/skill-ir.json

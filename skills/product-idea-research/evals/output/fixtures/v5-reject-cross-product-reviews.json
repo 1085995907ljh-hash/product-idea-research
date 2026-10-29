@@ -1,0 +1,1533 @@
+{
+  "schema_version": "product-idea-research/v5",
+  "title": "V5 合成深度展示：不是市场调研",
+  "idea": "只测试契约，不代表任何真实产品",
+  "date": "2026-10-28",
+  "scope": "美国 / iOS / 消费者 / 独立开发者",
+  "fixture": true,
+  "status": "partial",
+  "conclusion": {
+    "verdict": "conditional",
+    "summary": "合成案例：原任务已存在，仍需验证一个小缺口。",
+    "reasons": [
+      "合成讨论包含反证，不代表真实需求频率。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Synthetic fixture product descriptions",
+      "url": "https://example.org/fixtures/S1",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    },
+    {
+      "id": "S2",
+      "title": "Synthetic fixture review records",
+      "url": "https://example.org/fixtures/S2",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    },
+    {
+      "id": "S3",
+      "title": "Synthetic fixture natural discussion records",
+      "url": "https://example.org/fixtures/S3",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    }
+  ],
+  "evidence": [],
+  "competitors": [
+    {
+      "id": "C1",
+      "name": "合成工具 Alpha",
+      "kind": "direct",
+      "summary": "合成替代方案，不是真实产品。",
+      "pricing": "合成价格未知；人工办法也有时间成本。",
+      "limitation": "不得当作真实竞争格局。",
+      "positioning": "合成定位：完成同一旧任务。",
+      "audience": "合成用户",
+      "category_ids": [
+        "software"
+      ],
+      "official_keywords": [
+        "合成官方词"
+      ],
+      "user_keywords": [],
+      "strengths": [
+        "合成优势：已有完整流程"
+      ],
+      "weaknesses": [
+        "合成边界：仍有人工步骤"
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C2",
+      "name": "合成工具 Beta",
+      "kind": "indirect",
+      "summary": "合成替代方案，不是真实产品。",
+      "pricing": "合成价格未知；人工办法也有时间成本。",
+      "limitation": "不得当作真实竞争格局。",
+      "positioning": "合成定位：完成同一旧任务。",
+      "audience": "合成用户",
+      "category_ids": [
+        "software"
+      ],
+      "official_keywords": [
+        "合成官方词"
+      ],
+      "user_keywords": [],
+      "strengths": [
+        "合成优势：已有完整流程"
+      ],
+      "weaknesses": [
+        "合成边界：仍有人工步骤"
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C3",
+      "name": "合成人工表格",
+      "kind": "manual",
+      "summary": "合成替代方案，不是真实产品。",
+      "pricing": "合成价格未知；人工办法也有时间成本。",
+      "limitation": "不得当作真实竞争格局。",
+      "positioning": "合成定位：完成同一旧任务。",
+      "audience": "合成用户",
+      "category_ids": [
+        "manual"
+      ],
+      "official_keywords": [
+        "合成官方词"
+      ],
+      "user_keywords": [],
+      "strengths": [
+        "合成优势：已有完整流程"
+      ],
+      "weaknesses": [
+        "合成边界：仍有人工步骤"
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "trends": [
+    {
+      "keyword": "synthetic repeated entry",
+      "group": "synthetic-problem",
+      "window": "30d",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    },
+    {
+      "keyword": "synthetic repeated entry",
+      "group": "synthetic-problem",
+      "window": "90d",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    },
+    {
+      "keyword": "synthetic repeated entry",
+      "group": "synthetic-problem",
+      "window": "12m",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    },
+    {
+      "keyword": "synthetic manual sorting",
+      "group": "synthetic-problem",
+      "window": "30d",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    },
+    {
+      "keyword": "synthetic manual sorting",
+      "group": "synthetic-problem",
+      "window": "90d",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    },
+    {
+      "keyword": "synthetic manual sorting",
+      "group": "synthetic-problem",
+      "window": "12m",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    },
+    {
+      "keyword": "synthetic task workflow",
+      "group": "synthetic-alternative",
+      "window": "30d",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    },
+    {
+      "keyword": "synthetic task workflow",
+      "group": "synthetic-alternative",
+      "window": "90d",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    },
+    {
+      "keyword": "synthetic task workflow",
+      "group": "synthetic-alternative",
+      "window": "12m",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    },
+    {
+      "keyword": "synthetic task spreadsheet",
+      "group": "synthetic-alternative",
+      "window": "30d",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    },
+    {
+      "keyword": "synthetic task spreadsheet",
+      "group": "synthetic-alternative",
+      "window": "90d",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    },
+    {
+      "keyword": "synthetic task spreadsheet",
+      "group": "synthetic-alternative",
+      "window": "12m",
+      "geo": "US",
+      "category": "All",
+      "search_type": "Web",
+      "granularity": "synthetic-weekly",
+      "reason": "Synthetic raw points for renderer regression only; not actual Google Trends data.",
+      "source_ids": [
+        "S3"
+      ],
+      "points": [
+        {
+          "date": "2026-10-01",
+          "value": 10,
+          "partial": false
+        },
+        {
+          "date": "2026-10-08",
+          "value": null,
+          "partial": false
+        },
+        {
+          "date": "2026-10-15",
+          "value": 20,
+          "partial": true
+        }
+      ]
+    }
+  ],
+  "glossary": [],
+  "payment_evidence_ids": [],
+  "hard_vetoes": [],
+  "scorecard": [
+    {
+      "dimension": "attention",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    },
+    {
+      "dimension": "competition",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    },
+    {
+      "dimension": "gap",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    },
+    {
+      "dimension": "timing",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    },
+    {
+      "dimension": "validation",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    },
+    {
+      "dimension": "solo_cost",
+      "value": 3,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ],
+      "certainty": "inferred"
+    }
+  ],
+  "sections": [
+    {
+      "id": "market",
+      "title": "市场调研",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": [
+        {
+          "id": "market-overview",
+          "title": "市场全貌",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        },
+        {
+          "id": "market-social",
+          "title": "社交平台讨论",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        },
+        {
+          "id": "market-scale",
+          "title": "市场规模与走势",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        },
+        {
+          "id": "market-users",
+          "title": "美国目标用户",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        }
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "competition",
+      "title": "竞品",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": [],
+      "source_ids": []
+    },
+    {
+      "id": "product",
+      "title": "产品研究",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": [
+        {
+          "id": "product-potential",
+          "title": "潜力与切入建议",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        },
+        {
+          "id": "product-cost",
+          "title": "投入成本",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        },
+        {
+          "id": "product-cautions",
+          "title": "平台与技术",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        }
+      ],
+      "source_ids": []
+    }
+  ],
+  "decision": {
+    "recommendation": "仅演示先验证缺口的建议。",
+    "mvp_focus": "合成 MVP：仅测试一个任务结果。",
+    "main_risk": "这是一组虚构资料，不能支持真实入场决策。",
+    "next_step": "在真实研究中重新核验用户与替代方案。",
+    "source_ids": [
+      "S1",
+      "S3"
+    ]
+  },
+  "directions": [
+    {
+      "id": "narrow-task",
+      "name": "合成方向：一个整理步骤",
+      "stance": "recommended",
+      "target_user": "合成重复任务用户",
+      "change": "合成原案收窄为一个步骤。",
+      "mvp_focus": "仅验证减少一次重复操作。",
+      "why": "合成证据只能演示结构，不支持真实产品建议。",
+      "first_test": "真实研究应重新寻找独立用户并做小测试。",
+      "main_risk": "尚未验证真实需求。",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "scorecard": [
+        {
+          "dimension": "attention",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "competition",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "gap",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "timing",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "validation",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "solo_cost",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        }
+      ],
+      "pain_ids": [
+        "pain"
+      ],
+      "competitor_ids": [
+        "C1",
+        "C3"
+      ],
+      "existing_alternatives": "合成工具 Alpha 与人工表格。",
+      "remaining_gap": "合成缺口：重复录入。"
+    },
+    {
+      "id": "history-check",
+      "name": "合成方向：回看资料来源",
+      "stance": "explore",
+      "target_user": "合成重复任务用户",
+      "change": "合成原案收窄为一个步骤。",
+      "mvp_focus": "合成范围：只支持一次人工核对。",
+      "why": "合成证据只能演示结构，不支持真实产品建议。",
+      "first_test": "真实研究应重新寻找独立用户并做小测试。",
+      "main_risk": "合成方向仍缺真实用户与效果证据。",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "scorecard": [
+        {
+          "dimension": "attention",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "competition",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "gap",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "timing",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "validation",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "solo_cost",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        }
+      ],
+      "pain_ids": [
+        "pain"
+      ],
+      "competitor_ids": [
+        "C1",
+        "C3"
+      ],
+      "existing_alternatives": "合成工具 Alpha 与人工表格。",
+      "remaining_gap": "合成缺口：重复录入。"
+    },
+    {
+      "id": "manual-assist",
+      "name": "合成方向：人工表格辅助",
+      "stance": "explore",
+      "target_user": "合成重复任务用户",
+      "change": "合成原案收窄为一个步骤。",
+      "mvp_focus": "合成范围：只支持一次人工核对。",
+      "why": "合成证据只能演示结构，不支持真实产品建议。",
+      "first_test": "真实研究应重新寻找独立用户并做小测试。",
+      "main_risk": "合成方向仍缺真实用户与效果证据。",
+      "source_ids": [
+        "S1",
+        "S3"
+      ],
+      "scorecard": [
+        {
+          "dimension": "attention",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "competition",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "gap",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "timing",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "validation",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        },
+        {
+          "dimension": "solo_cost",
+          "value": 3,
+          "reason": "合成方向评分，仅测试相同维度。",
+          "source_ids": [
+            "S1",
+            "S3"
+          ],
+          "certainty": "inferred"
+        }
+      ],
+      "pain_ids": [
+        "pain"
+      ],
+      "competitor_ids": [
+        "C1",
+        "C3"
+      ],
+      "existing_alternatives": "合成工具 Alpha 与人工表格。",
+      "remaining_gap": "合成缺口：重复录入。"
+    }
+  ],
+  "no_directions_reason": "尚未研究真实痛点与现有替代，当前没有依据提出相邻方向。",
+  "social_research": {
+    "summary": "合成平台材料仅用于合同回归，不能推断实际需求强弱。",
+    "platforms": [
+      {
+        "id": "forum",
+        "name": "合成论坛",
+        "status": "available",
+        "query_scope": "合成需求查询；未按品牌筛选",
+        "time_range": "2026-10-01 至 2026-10-07（虚构）",
+        "discussion": "合成讨论同时出现时间成本问题与无需新工具的反证。",
+        "assessment": "仅演示多位作者的材料组织。",
+        "limitation": "全部内容均为 synthetic fixture。",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "id": "video",
+        "name": "合成短视频平台",
+        "status": "blocked",
+        "query_scope": "尚未取得原始材料",
+        "time_range": "尚未核实",
+        "discussion": "未取得讨论材料，不能称没有讨论。",
+        "assessment": "访问受阻不构成没有需求。",
+        "limitation": "无可用原帖，不补造样本。",
+        "source_ids": []
+      }
+    ],
+    "posts": [
+      {
+        "id": "P1",
+        "platform_id": "forum",
+        "author_key": "synthetic-author-a",
+        "published_at": "2026-10-01",
+        "region": "US（合成身份）",
+        "state": "verified",
+        "query_origin": "need",
+        "behavior": "problem",
+        "context": "合成作者 A：现有工具需要反复手工整理。",
+        "quote": null,
+        "brand_mentions": [
+          "C1"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "id": "P2",
+        "platform_id": "forum",
+        "author_key": "synthetic-author-b",
+        "published_at": "2026-10-01",
+        "region": "US（合成身份）",
+        "state": "verified",
+        "query_origin": "need",
+        "behavior": "problem",
+        "context": "合成作者 B：手工办法够用，不愿安装新软件。",
+        "quote": null,
+        "brand_mentions": [],
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "id": "P3",
+        "platform_id": "forum",
+        "author_key": "synthetic-author-a",
+        "published_at": "2026-10-01",
+        "region": "US（合成身份）",
+        "state": "verified",
+        "query_origin": "need",
+        "behavior": "problem",
+        "context": "同一合成作者 A 再次提及两个品牌，须去重。",
+        "quote": null,
+        "brand_mentions": [
+          "C1",
+          "C2"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "id": "P4",
+        "platform_id": "forum",
+        "author_key": "synthetic-author-c",
+        "published_at": "2026-10-01",
+        "region": "US（合成身份）",
+        "state": "verified",
+        "query_origin": "need",
+        "behavior": "problem",
+        "context": "合成作者 C 比较两个已有办法。",
+        "quote": null,
+        "brand_mentions": [
+          "C1",
+          "C2"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "pains": [
+      {
+        "id": "pain",
+        "name": "合成痛点：重复整理",
+        "audience": "合成用户",
+        "situation": "虚构的重复任务",
+        "current_workaround": "合成现办法：人工表格",
+        "problem": "合成问题：重复录入",
+        "consequence": "合成影响：额外时间成本",
+        "recurrence": "两位合成作者提供线索，不能推出总体频率。",
+        "counterevidence": "决定性合成反证：有人认为人工办法已足够。",
+        "status": "recurring",
+        "post_ids": [
+          "P1",
+          "P2"
+        ],
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ]
+  },
+  "need_assessment": {
+    "classification": "new_solution",
+    "novelty_reason": "合成分类演示：旧任务的新解法，不是新出现的需求。",
+    "demand_summary": "只能展示证据结构，不能判定真实需求。",
+    "existing_solutions": "合成工具 Alpha、Beta 及人工表格。",
+    "satisfaction": "部分合成用户满意，部分仍需手工整理。",
+    "remaining_gap": "合成剩余缺口：一个重复整理步骤。",
+    "original_action": "合成原案：收窄后补证据。",
+    "source_ids": [
+      "S1",
+      "S3"
+    ]
+  },
+  "competitive_analysis": {
+    "categories": [
+      {
+        "id": "software",
+        "name": "合成分类：软件流程",
+        "description": "围绕同一个任务的合成软件替代。",
+        "competitor_ids": [
+          "C1",
+          "C2"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "id": "manual",
+        "name": "合成分类：人工办法",
+        "description": "零新增软件费不代表零时间成本。",
+        "competitor_ids": [
+          "C3"
+        ],
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "feature_competitor_ids": [
+      "C1",
+      "C2"
+    ],
+    "features": [
+      {
+        "id": "feature",
+        "name": "合成功能：减少重复录入",
+        "cells": [
+          {
+            "competitor_id": "C1",
+            "state": "partial",
+            "basis": "合成功能依据：仍有一个手工步骤。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "competitor_id": "C2",
+            "state": "unknown",
+            "basis": "合成功能尚未核实，不能编有或没有。",
+            "source_ids": []
+          }
+        ]
+      },
+      {
+        "id": "history",
+        "name": "合成功能：核对历史来源",
+        "cells": [
+          {
+            "competitor_id": "C1",
+            "state": "yes",
+            "basis": "合成功能材料演示：可查看来源。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "competitor_id": "C2",
+            "state": "partial",
+            "basis": "合成功能材料演示：只保留部分来源。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "id": "R1",
+        "competitor_id": "C1",
+        "rating": 5,
+        "published_at": "2026-10-02",
+        "version": null,
+        "summary": "合成好评：完整流程省时间。",
+        "quote": null,
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "id": "R2",
+        "competitor_id": "C1",
+        "rating": 2,
+        "published_at": "2026-10-02",
+        "version": null,
+        "summary": "合成差评：重复录入仍然费时。",
+        "quote": null,
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "id": "R3",
+        "competitor_id": "C2",
+        "rating": 4,
+        "published_at": "2026-10-03",
+        "version": null,
+        "summary": "合成 Beta 好评：轻量流程较易上手。",
+        "quote": null,
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "review_coverage": [
+      {
+        "competitor_id": "C1",
+        "scope": "合成精选评论，非全量",
+        "time_range": "2026-10（虚构）",
+        "limitation": "两条虚构评论不代表真实用户分布。",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "competitor_id": "C2",
+        "scope": "仅一条合成精选高星文字评价",
+        "time_range": "2026-10（虚构）",
+        "limitation": "一条虚构高星评论不能支持总体口碑，也不能说明没有差评。",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "competitor_id": "C3",
+        "scope": "合成精选评论，非全量",
+        "time_range": "2026-10（虚构）",
+        "limitation": "未取得评论，零条不代表无用户或无差评。",
+        "source_ids": []
+      }
+    ],
+    "review_themes": [
+      {
+        "id": "positive",
+        "sentiment": "positive",
+        "theme": "合成好评主题：流程完整",
+        "task": "完成合成旧任务",
+        "impact": "合成结果：减少操作",
+        "current_status": "unknown",
+        "assessment": "合成现状未核实，不能把回复当修复验证。",
+        "competitor_ids": [
+          "C1"
+        ],
+        "review_ids": [
+          "R1"
+        ],
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "id": "negative",
+        "sentiment": "negative",
+        "theme": "合成差评主题：重复录入",
+        "task": "完成合成旧任务",
+        "impact": "合成结果：仍有时间成本",
+        "current_status": "unknown",
+        "assessment": "合成现状未核实，不能把回复当修复验证。",
+        "competitor_ids": [
+          "C1"
+        ],
+        "review_ids": [
+          "R2"
+        ],
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "mindshare": {
+      "status": "measured",
+      "summary": "仅统计合成自然讨论样本中的品牌提及，不是市场份额。",
+      "eligible_post_ids": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "limitation": "分母包含未提品牌者，同作者去重，可同时提及多个品牌；不推导销量或份额。"
+    }
+  },
+  "briefing": {
+    "executive": {
+      "recommendation": "合成总监建议，不构成真实入场意见。",
+      "alternative": "合成相邻方向，尚未验证。",
+      "mvp_focus": "合成最小任务，只测试报告。"
+    },
+    "landscape": {
+      "x_low": "记录与整理",
+      "x_high": "分析与建议",
+      "y_low": "单次使用",
+      "y_high": "持续跟踪",
+      "entries": [
+        {
+          "competitor_id": "C1",
+          "quadrant": "top-left",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "competitor_id": "C2",
+          "quadrant": "top-right",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        {
+          "competitor_id": "C3",
+          "quadrant": "top-left",
+          "source_ids": [
+            "S1"
+          ]
+        }
+      ],
+      "note": "定性定位，不代表市场份额或产品效果。"
+    },
+    "selected_competitor_ids": [
+      "C1",
+      "C2"
+    ],
+    "selection_reason": "尚未确定重点竞品。",
+    "feature_ids": [
+      "feature",
+      "history"
+    ],
+    "review_ids": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "review_note": "尚未取得评价；缺失不等于没有用户。",
+    "trend_summary": "合成多组关键词序列仅测试渲染，不代表真实搜索量；组间和窗口间不能比较绝对大小。",
+    "competition_judgment": {
+      "verdict": "unknown",
+      "summary": "尚未研究，不能判断能否差异化。",
+      "our_advantage": "尚未确定。",
+      "our_disadvantage": "尚未确定。",
+      "source_ids": []
+    },
+    "depth": {
+      "market": {
+        "social_platforms": [
+          {
+            "id": "forum",
+            "label": "合成论坛",
+            "state": "available",
+            "summary": "合成需求讨论同时包含重复整理问题与反证。",
+            "pain": "合成用户反复录入同一条信息。",
+            "opportunity": "只演示收窄到一个任务的机会判断，不构成真实建议。",
+            "post_ids": [
+              "P1",
+              "P2",
+              "P4"
+            ],
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "id": "video",
+            "label": "合成短视频平台",
+            "state": "blocked",
+            "summary": "合成访问受阻状态，不补造平台讨论。",
+            "pain": "未取得材料，不能判定痛点。",
+            "opportunity": "未知；访问失败不等于没有需求。",
+            "post_ids": [],
+            "source_ids": []
+          }
+        ],
+        "social_findings": [
+          {
+            "title": "合成观察：旧任务在新流程里仍有手工步骤",
+            "need": "合成材料演示一个旧需求，并保留无需新软件的反证。",
+            "newness": "这是合成旧任务的新解法，不是新需求证据。",
+            "opportunity": "合成机会：减少一次重复录入。",
+            "avoid": "合成放弃项：在没有效果依据时承诺自动完成全部工作。",
+            "source_ids": [
+              "S1",
+              "S3"
+            ]
+          }
+        ],
+        "keyword_groups": [
+          {
+            "id": "synthetic-problem",
+            "title": "合成关键词组：任务痛点",
+            "intent": "合成意图：按任务而非品牌查找问题。",
+            "keywords": [
+              "synthetic repeated entry",
+              "synthetic manual sorting"
+            ],
+            "summary": "全部序列为 synthetic，不能解读为真实 Google Trends 走势。",
+            "source_ids": [
+              "S3"
+            ]
+          },
+          {
+            "id": "synthetic-alternative",
+            "title": "合成关键词组：现有办法",
+            "intent": "合成意图：查找旧任务的替代办法。",
+            "keywords": [
+              "synthetic task workflow",
+              "synthetic task spreadsheet"
+            ],
+            "summary": "两组独立归一化，只测试分组组织，不比较跨组绝对热度。",
+            "source_ids": [
+              "S3"
+            ]
+          }
+        ]
+      },
+      "competition": {
+        "catalog_groups": [
+          {
+            "id": "software",
+            "title": "合成分类：软件流程",
+            "description": "围绕同一个任务的合成软件替代。",
+            "competitor_ids": [
+              "C1",
+              "C2"
+            ],
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "id": "manual",
+            "title": "合成分类：人工办法",
+            "description": "零新增软件费不代表零时间成本。",
+            "competitor_ids": [
+              "C3"
+            ],
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "selection": [
+          {
+            "competitor_id": "C1",
+            "roles": [
+              "leader",
+              "similar"
+            ],
+            "reason": "合成 Alpha 被选来比较完整流程与重复录入步骤。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "competitor_id": "C2",
+            "roles": [
+              "new",
+              "adjacent"
+            ],
+            "reason": "合成 Beta 被选来比较轻量流程；新进入者角色仅为虚构分类。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "feature_groups": [
+          {
+            "id": "entry",
+            "title": "合成任务链：录入整理",
+            "job": "合成用户希望减少一次重复录入。",
+            "feature_ids": [
+              "feature"
+            ],
+            "takeaway": "合成 Alpha 只支持部分，Beta 仍未核实；未知不等于没有。",
+            "source_ids": [
+              "S1"
+            ]
+          },
+          {
+            "id": "checking",
+            "title": "合成任务链：回看核对",
+            "job": "合成用户希望追溯自己整理过的资料。",
+            "feature_ids": [
+              "history"
+            ],
+            "takeaway": "合成功能差异：完整来源与部分来源的区别，不代表实际使用效果。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "product_reviews": [
+          {
+            "competitor_id": "C1",
+            "state": "available",
+            "summary": "合成 Alpha 两条文字评价演示正负声音并存。",
+            "positive": [
+              "合成 Alpha 好评：流程完整省时间。"
+            ],
+            "negative": [
+              "合成 Alpha 差评：重复录入仍费时。"
+            ],
+            "judgment": "合成 Alpha 判断：价值与手工步骤并存，尚不能推断总体口碑。",
+            "review_ids": [
+              "R3",
+              "R2"
+            ],
+            "source_ids": [
+              "S2"
+            ]
+          },
+          {
+            "competitor_id": "C2",
+            "state": "partial",
+            "summary": "合成 Beta 只取得一条高星文字评价，不强凑差评。",
+            "positive": [
+              "合成 Beta 好评：轻量流程较易上手。"
+            ],
+            "negative": [],
+            "judgment": "合成 Beta 判断：负面声音尚未取得，不能声称没有差评。",
+            "review_ids": [
+              "R1"
+            ],
+            "source_ids": [
+              "S2"
+            ]
+          }
+        ]
+      },
+      "directions": [
+        {
+          "direction_id": "narrow-task",
+          "description": "合成方向描述：只减少重复整理的一步。",
+          "pain": "合成方向痛点：重复录入花时间。",
+          "better_because": "合成取舍：任务范围较窄，可先判断是否减少一次操作。",
+          "cost": {
+            "level": "low",
+            "build": "合成搭建成本：输入整理与本地保存；不编美元或工期。",
+            "ongoing": "合成持续成本：资料维护与支持，暂无真实报价。"
+          },
+          "feasibility": {
+            "verdict": "conditional",
+            "summary": "合成技术判断：整理流程可表达，但效果尚未验证。",
+            "dependencies": [
+              "合成依赖：用户授权提供资料，不能假设跨应用读取权限。"
+            ]
+          },
+          "source_ids": [
+            "S1",
+            "S3"
+          ]
+        },
+        {
+          "direction_id": "history-check",
+          "description": "合成方向描述：让用户回看已整理信息的来源。",
+          "pain": "合成方向痛点：事后难以核对来源。",
+          "better_because": "合成取舍：先提供可追溯资料，不承诺自动判断内容正确。",
+          "cost": {
+            "level": "medium",
+            "build": "合成搭建成本：来源关联与检索索引；未取得真实报价。",
+            "ongoing": "合成持续成本：索引维护与存储开销，当前只有相对档位。"
+          },
+          "feasibility": {
+            "verdict": "feasible",
+            "summary": "合成技术判断：可演示来源关联，不能代替真实技术验证。",
+            "dependencies": [
+              "合成依赖：原始内容可合法保存且来源链接仍可访问。"
+            ]
+          },
+          "source_ids": [
+            "S1",
+            "S3"
+          ]
+        },
+        {
+          "direction_id": "manual-assist",
+          "description": "合成方向描述：在人工表格上增加一项辅助。",
+          "pain": "合成方向痛点：用户不愿迁移现有表格。",
+          "better_because": "合成取舍：保留现有工作办法，但能否付费仍未知。",
+          "cost": {
+            "level": "unknown",
+            "build": "合成搭建成本：取决于真实文件格式和平台能力，暂不估算。",
+            "ongoing": "合成持续成本：格式兼容和维护投入未知。"
+          },
+          "feasibility": {
+            "verdict": "unknown",
+            "summary": "合成技术判断：尚未检查真实平台导入导出能力。",
+            "dependencies": [
+              "合成依赖：补核平台文档与用户文件范围。"
+            ]
+          },
+          "source_ids": [
+            "S1",
+            "S3"
+          ]
+        }
+      ]
+    }
+  }
+}

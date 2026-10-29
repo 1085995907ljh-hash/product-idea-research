@@ -1,0 +1,209 @@
+{
+  "schema_version": "product-idea-research/v4",
+  "title": "合成回归夹具：不是市场调研",
+  "idea": "只测试契约，不代表任何真实产品",
+  "date": "2026-10-28",
+  "scope": "美国 / iOS / 消费者 / 独立开发者",
+  "fixture": true,
+  "status": "partial",
+  "conclusion": {
+    "verdict": "conditional",
+    "summary": "尚未开始研究，不能据此判断想法成立。",
+    "reasons": []
+  },
+  "sources": [],
+  "evidence": [],
+  "competitors": [],
+  "trends": [],
+  "glossary": [],
+  "payment_evidence_ids": [],
+  "hard_vetoes": [],
+  "scorecard": [
+    {
+      "dimension": "attention",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    },
+    {
+      "dimension": "competition",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    },
+    {
+      "dimension": "gap",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    },
+    {
+      "dimension": "timing",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    },
+    {
+      "dimension": "validation",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    },
+    {
+      "dimension": "solo_cost",
+      "value": null,
+      "reason": "未研究",
+      "source_ids": [],
+      "certainty": "unknown"
+    }
+  ],
+  "sections": [
+    {
+      "id": "market",
+      "title": "市场调研",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": [
+        {
+          "id": "market-overview",
+          "title": "市场全貌",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        },
+        {
+          "id": "market-social",
+          "title": "社交平台讨论",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        },
+        {
+          "id": "market-scale",
+          "title": "市场规模与走势",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        },
+        {
+          "id": "market-users",
+          "title": "美国目标用户",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        }
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "competition",
+      "title": "竞品",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": [],
+      "source_ids": []
+    },
+    {
+      "id": "product",
+      "title": "产品研究",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": [
+        {
+          "id": "product-potential",
+          "title": "潜力与切入建议",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        },
+        {
+          "id": "product-cost",
+          "title": "投入成本",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        },
+        {
+          "id": "product-cautions",
+          "title": "平台与技术",
+          "type": "paragraph",
+          "text": "尚未研究，不作判断。",
+          "source_ids": []
+        }
+      ],
+      "source_ids": []
+    }
+  ],
+  "decision": {
+    "recommendation": "尚未开展研究，先收集证据再作入场判断。",
+    "mvp_focus": "尚未确定，等待需求与缺口研究。",
+    "main_risk": "核心假设和证据覆盖尚未核实。",
+    "next_step": "先查找目标用户的近期需求表达与反证。",
+    "source_ids": []
+  },
+  "directions": [],
+  "no_directions_reason": "尚未研究真实痛点与现有替代，当前没有依据提出相邻方向。",
+  "social_research": {
+    "summary": "尚未开展跨平台研究；未知不代表没有需求。",
+    "platforms": [],
+    "posts": [],
+    "pains": []
+  },
+  "need_assessment": {
+    "classification": "unknown",
+    "novelty_reason": "尚未核实任务、情境与解法的区别。",
+    "demand_summary": "尚未取得真实用户表达，不能判断需求是否成立。",
+    "existing_solutions": "现有产品与人工替代尚未核实。",
+    "satisfaction": "现有办法的满足程度尚未核实。",
+    "remaining_gap": "尚未核实具体缺口。",
+    "original_action": "先补充需求与竞争证据，再判断原案是否值得验证。",
+    "source_ids": []
+  },
+  "competitive_analysis": {
+    "categories": [],
+    "feature_competitor_ids": [],
+    "features": [],
+    "reviews": [],
+    "review_coverage": [],
+    "review_themes": [],
+    "mindshare": {
+      "status": "insufficient",
+      "summary": "尚未取得可去重的自然需求讨论样本，不计算品牌提及比例。",
+      "eligible_post_ids": [],
+      "limitation": "尚未核实检索来源、作者与品牌提及；缺数据不代表没有品牌认知。"
+    }
+  },
+  "briefing": {
+    "executive": {
+      "recommendation": "合成负例链接 https://example.org",
+      "alternative": "尚无依据推荐更好的方向。",
+      "mvp_focus": "尚未确定。"
+    },
+    "landscape": {
+      "x_low": "记录与整理",
+      "x_high": "分析与建议",
+      "y_low": "单次使用",
+      "y_high": "持续跟踪",
+      "entries": [],
+      "note": "定性定位，不代表市场份额或产品效果。"
+    },
+    "selected_competitor_ids": [],
+    "selection_reason": "尚未确定重点竞品。",
+    "feature_ids": [],
+    "review_ids": [],
+    "review_note": "尚未取得评价；缺失不等于没有用户。",
+    "trend_summary": "尚未取得搜索趋势；不据此判断需求。",
+    "competition_judgment": {
+      "verdict": "unknown",
+      "summary": "尚未研究，不能判断能否差异化。",
+      "our_advantage": "尚未确定。",
+      "our_disadvantage": "尚未确定。",
+      "source_ids": []
+    }
+  }
+}

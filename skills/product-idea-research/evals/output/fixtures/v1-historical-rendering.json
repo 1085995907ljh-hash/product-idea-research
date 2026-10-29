@@ -1,0 +1,197 @@
+{
+  "schema_version": "product-idea-research/v1",
+  "title": "合成回归夹具：不是市场调研",
+  "idea": "只测试契约，不代表任何真实产品",
+  "date": "2026-10-28",
+  "scope": "美国 / iOS / 消费者 / 小团队",
+  "fixture": true,
+  "status": "partial",
+  "conclusion": {
+    "verdict": "conditional",
+    "summary": "尚未开始研究，不能据此判断想法成立。",
+    "reasons": []
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Synthetic fixture product descriptions",
+      "url": "https://example.org/fixtures/S1",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    },
+    {
+      "id": "S2",
+      "title": "Synthetic fixture review records",
+      "url": "https://example.org/fixtures/S2",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    },
+    {
+      "id": "S3",
+      "title": "Synthetic fixture natural discussion records",
+      "url": "https://example.org/fixtures/S3",
+      "status": "verified",
+      "accessed_at": "2026-10-28",
+      "published_at": "2026-10-01"
+    }
+  ],
+  "evidence": [],
+  "competitors": [],
+  "trends": [],
+  "glossary": [],
+  "payment_evidence_ids": [],
+  "hard_vetoes": [],
+  "scorecard": [
+    {
+      "dimension": "demand",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "dimension": "jobs",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "dimension": "competition",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "dimension": "market",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "dimension": "business",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "dimension": "buildability",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "dimension": "risk",
+      "value": 5,
+      "reason": "合成评分，仅测试渲染及历史兼容。",
+      "source_ids": [
+        "S1"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "decomposition",
+      "title": "想法与子方向",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "demand",
+      "title": "需求证据",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "jobs",
+      "title": "用户要完成的任务",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "market",
+      "title": "市场规模与走势",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "environment",
+      "title": "外部环境与平台",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "competition",
+      "title": "竞品与差评",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "segments",
+      "title": "先服务哪一群人",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "business",
+      "title": "收费与商业情景",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "risks",
+      "title": "优劣势与风险",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "decision",
+      "title": "原想法结论与验证",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "alternatives",
+      "title": "同领域机会",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "discarded",
+      "title": "放弃与待验证方向",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    },
+    {
+      "id": "limitations",
+      "title": "研究局限",
+      "status": "not_run",
+      "summary": "尚未开展研究。",
+      "blocks": []
+    }
+  ]
+}
