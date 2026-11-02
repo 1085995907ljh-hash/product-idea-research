@@ -2,18 +2,18 @@
   "schema_version": "2.0.0",
   "name": "product-idea-research",
   "title": "独立开发者产品调研",
-  "job_to_be_done": "为个人独立 AI 开发者调研或筛选美国产品 idea，挖掘社交痛点、市场走势与美国用户习惯，对照竞品功能及好差评，判断能否差异化。总监派隔离研究员，给5分制判断、推荐方向与MVP主攻点，交付研究概览、市场调研、竞品、产品研究四部分中文HTML和Markdown。适用于一句话想法或已有research的深入核验。不用于完整PRD、UI设计、详细技术方案或开发。",
+  "job_to_be_done": "为个人独立AI开发者调研、筛选或压力测试美国产品idea。主Agent派隔离研究员查需求、市场、竞品与口碑，分级支持和反对证据，找出必要前提中的关键假设，给测试与投入建议。交付研究综述、市场调研、竞品、产品研究四章中文HTML/Markdown及5分制评分。适用于一句话想法或已有research的深入核验。不用于完整PRD、UI设计、技术方案或开发。",
   "trigger_surface": {
-    "description": "为个人独立 AI 开发者调研或筛选美国产品 idea，挖掘社交痛点、市场走势与美国用户习惯，对照竞品功能及好差评，判断能否差异化。总监派隔离研究员，给5分制判断、推荐方向与MVP主攻点，交付研究概览、市场调研、竞品、产品研究四部分中文HTML和Markdown。适用于一句话想法或已有research的深入核验。不用于完整PRD、UI设计、详细技术方案或开发。",
+    "description": "为个人独立AI开发者调研、筛选或压力测试美国产品idea。主Agent派隔离研究员查需求、市场、竞品与口碑，分级支持和反对证据，找出必要前提中的关键假设，给测试与投入建议。交付研究综述、市场调研、竞品、产品研究四章中文HTML/Markdown及5分制评分。适用于一句话想法或已有research的深入核验。不用于完整PRD、UI设计、技术方案或开发。",
     "should_trigger": [
+      "帮这个美国App想法做压力测试，找出关键假设，告诉我现在值得投入多少。",
+      "全面调查这个idea，给支持和反对证据、最便宜的测试及投入建议。",
       "我想做AI摄影App，先调研美国市场是否有机会。",
       "帮我验证一个面向美国用户的旅行打包产品想法。",
       "深入核验这份research里的市场、竞品与付费假设。",
       "研究或验证这个iOS消费产品idea，输出可视化报告。",
       "我有一个健康App想法，需要产品调研和商业分析。",
-      "帮我调研现有产品的差评，找同领域机会。",
-      "继续调研这个想法，补充竞品与美国需求证据。",
-      "我是个人AI开发者，帮这个产品idea打5分制机会分，建议更好的切口和MVP主攻点。"
+      "帮我调研现有产品的差评，找同领域机会。"
     ],
     "should_not_trigger": [
       "把这篇文章翻译成中文。",
@@ -25,6 +25,7 @@
       "帮我部署现有网站到Cloudflare。"
     ],
     "edge_cases": [
+      "解释一下这篇文章里关键假设和压力测试的意思，不需要调研。",
       "调研不做了，只改稿，让这段话更自然。",
       "研究已经通过，现在只写PRD。",
       "生成这个产品的UI设计截图。",
@@ -51,11 +52,14 @@
       "references/deep-data-contract.md",
       "references/deep-research.md",
       "references/depth-contract.md",
+      "references/director-synthesis.md",
       "references/evidence-scoring.md",
+      "references/main-agent.md",
       "references/methodology-map.md",
       "references/methodology-v2.md",
       "references/report-contract.md",
       "references/report-design.md",
+      "references/stress-test-contract.md",
       "references/workflow.md"
     ],
     "scripts": [
@@ -64,7 +68,8 @@
       "scripts/deep_briefing.py",
       "scripts/preflight.py",
       "scripts/report.py",
-      "scripts/research_details.py"
+      "scripts/research_details.py",
+      "scripts/stress_test.py"
     ],
     "assets": [
       "assets/brief.css",
@@ -110,6 +115,13 @@
       "evals/output/fixtures/v5-reject-cross-product-reviews.json",
       "evals/output/fixtures/v5-reject-keyword-group-mismatch.json",
       "evals/output/fixtures/v5-synthetic-deep-presentation.json",
+      "evals/output/fixtures/v6-director-stress-brief.json",
+      "evals/output/fixtures/v6-reject-overlap-thresholds.json",
+      "evals/output/fixtures/v6-reject-proxy-validation.json",
+      "evals/output/fixtures/v6-six-reject-promoted-hypothesis.json",
+      "evals/output/fixtures/v6-six-reject-unbounded-test.json",
+      "evals/output/fixtures/v6-six-reject-unvalidated-recommendation.json",
+      "evals/output/fixtures/v6-six-section-brief.json",
       "evals/output/reports/v5-synthetic-deep-presentation.md",
       "evals/semantic_config.json",
       "evals/trigger_cases.json"
@@ -129,6 +141,13 @@
       "evals/output/fixtures/v5-reject-cross-product-reviews.json",
       "evals/output/fixtures/v5-reject-keyword-group-mismatch.json",
       "evals/output/fixtures/v5-synthetic-deep-presentation.json",
+      "evals/output/fixtures/v6-director-stress-brief.json",
+      "evals/output/fixtures/v6-reject-overlap-thresholds.json",
+      "evals/output/fixtures/v6-reject-proxy-validation.json",
+      "evals/output/fixtures/v6-six-reject-promoted-hypothesis.json",
+      "evals/output/fixtures/v6-six-reject-unbounded-test.json",
+      "evals/output/fixtures/v6-six-reject-unvalidated-recommendation.json",
+      "evals/output/fixtures/v6-six-section-brief.json",
       "evals/output/reports/v5-synthetic-deep-presentation.md"
     ],
     "adversarial": [],

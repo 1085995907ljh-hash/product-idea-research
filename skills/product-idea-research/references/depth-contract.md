@@ -1,5 +1,7 @@
 # v5：简明概览，深入研究
 
+维护注：本页是v5历史契约，同时为v6提供市场/竞品/方向的深度字段。新报告默认v6，综述、grade、方向数量与测试规则由stress-test-contract.md覆盖；不得把v5的900字概览或complete必须三方向套在v6。
+
 默认schema_version=product-idea-research/v5。沿用v3证据层与v4四章核心，见deep-data-contract.md和briefing-contract.md；本文覆盖v4展示上限和阅读策略。v1–v4仍按原合同渲染，不静默重排/重算。评分公式/权重不变。research.json同源生成离线HTML、Markdown和ZIP；分享ZIP仅含research.json/research.md/sources.json，raw/work不进入。
 
 ## 四章与核心层

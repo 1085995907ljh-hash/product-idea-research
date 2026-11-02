@@ -1,6 +1,8 @@
-# product-idea-research · v0.6.0
+# product-idea-research · v0.7.1
 
-给个人独立 AI 开发者的美国产品调研 Skill。输入一句 idea 或已有研究，得到明确建议、5分制判断和四章中文报告：研究概览、市场调研、竞品、产品研究。输出 HTML、Markdown、结构化 JSON 和分享 ZIP。
+新run按director-synthesis.md生成六段式综述与director-reply.md；聊天证据可链接，HTML/完整MD综述仍无链接。旧v6报告未设presentation时保持原展示。
+
+给个人独立AI开发者的美国产品调研Skill。主Agent把idea拆成必要前提，派隔离研究员查支持和反对证据，选一个最能改变决定的关键假设，建议低成本测试及当前投入上限。四章为研究综述、市场调研、竞品、产品研究，保留辅助5分制评分和有证据的方向。输出HTML、Markdown、JSON、分享ZIP。
 
 完整介绍、安装命令与真实报告截图见 [GitHub README](https://github.com/1085995907ljh-hash/product-idea-research#readme)。本目录是可独立安装的完整 Skill，不能只复制 `SKILL.md`。
 

@@ -10,6 +10,10 @@ packages/
 !/dist/product-idea-research-v0.5.0.zip
 !/dist/product-idea-research-v0.6.0.zip
 !/dist/product-idea-research-v0.6.0-flat.zip
+!/dist/product-idea-research-v0.7.0.zip
+!/dist/product-idea-research-v0.7.0-flat.zip
+!/dist/product-idea-research-v0.7.1.zip
+!/dist/product-idea-research-v0.7.1-flat.zip
 !/dist/SHA256SUMS
 /skills/product-idea-research/dist/
 /skills/product-idea-research/registry/

@@ -148,7 +148,8 @@ def validate_depth(d):
     dr_map = indexed(drs, 'direction_id', 'depth.directions')
     need(set(dr_map) == set(directions), 'depth.directions须逐一覆盖详细directions')
     if complete:
-        need(3 <= len(drs) <= 5, '真实完成报告须三至五个方向')
+        if d.get('schema_version') == V5:
+            need(3 <= len(drs) <= 5, '真实完成报告须三至五个方向')
         need(set(social_map) == set(platforms), '真实完成报告须逐平台展示覆盖状态')
     for r in drs:
         fields(r, 'description pain better_because', 'depth.direction')

@@ -1,6 +1,7 @@
 """v4 five-minute presentation contract; detailed evidence stays in research.json."""
 from html import escape
 import re
+from stress_test import V6, markdown_stress_test
 
 SCRIPT_INTERFACE = 'internal-module'
 SCRIPT_INTERFACE_REASON = 'Imported by report.py for v4 validation and Markdown presentation.'
@@ -48,7 +49,8 @@ def validate_briefing(d, *, limits=(7, 6, 4), prefix='v4'):
     fields(ex, 'recommendation alternative mvp_focus')
     overview = [d.get('conclusion', {}).get('summary', ''), *d.get('conclusion', {}).get('reasons', []), *ex.values(), *[r.get('reason', '') for r in d.get('scorecard', [])]]
     need(all(isinstance(v, str) and not re.search(r'https?://|\[[^\]]+\]\(|<a\b', v, re.I) for v in overview), '研究概览禁止链接')
-    need(sum(len(v) for v in overview if isinstance(v, str)) <= 900, '研究概览过长，含评分理由最多900字符')
+    if d.get('schema_version') != V6:
+        need(sum(len(v) for v in overview if isinstance(v, str)) <= 900, '研究概览过长，含评分理由最多900字符')
     for r in d.get('scorecard', []):
         need(len(r.get('reason', '')) <= 90, '子项评分理由最多90字符')
     sections = rows(d.get('sections'))
@@ -121,18 +123,50 @@ def markdown_briefing(d, computed_score, md_text):
         out.append('')
     if d['fixture']:
         out.extend(['> 阅读样例，非真实市场调研。', ''])
-    out.extend(['## 一、研究概览', '', md_text(d['conclusion']['summary']), ''])
-    out.extend('- ' + md_text(x) for x in d['conclusion'].get('reasons', []))
-    ex = b['executive']
-    for k, label in [('recommendation', '总监建议'), ('alternative', '更好的方向'), ('mvp_focus', 'MVP主攻')]:
-        out.extend(['', '**' + label + '：**' + md_text(ex[k])])
-    out.extend(['', f"总监评分：{computed_score['value']:.1f}/5" + ('（暂定）' if computed_score['provisional'] else ''), ''])
-    table(['维度', '权重', '分数 / 5', '简短理由'], [[SHORT_NAMES[r['dimension']], str(WEIGHT_PERCENT[r['dimension']])+'%', r['value'] if r['value'] is not None else '未知', r['reason']] for r in d['scorecard']])
-    out.extend(['总分按所列权重相加，四舍五入到一位小数；评分是研究判断，不是成功概率；未知项仅以中性2.5计算暂定总分。', ''])
+    if d.get('schema_version') == V6:
+        if d['stress_test'].get('presentation') == 'investigator-six':
+            text = markdown_stress_test(d, md_text)
+            first_end = text.index('### 2）必须成立的前提')
+            # Score details belong inside section one, not a seventh summary section.
+            score_rows = '\n'.join('- ' + md_text(SHORT_NAMES[r['dimension']] + '：' + str(r['value'] if r['value'] is not None else '未知') + '/5；' + r['reason']) for r in d['scorecard'])
+            score_note = '<details>\n<summary>辅助评分 · ' + f"{computed_score['value']:.1f}/5" + ('（暂定）' if computed_score['provisional'] else '') + '</summary>\n\n' + score_rows + '\n\n未知项按中性2.5占位；评分不是成功概率。\n\n</details>\n\n'
+            out.extend(['## 一、研究综述', '', text[:first_end] + score_note + text[first_end:]])
+        else:
+            out.extend(['## 一、研究综述', '', markdown_stress_test(d, md_text), '### 辅助评分', ''])
+    else:
+        out.extend(['## 一、研究概览', '', md_text(d['conclusion']['summary']), ''])
+        out.extend('- ' + md_text(x) for x in d['conclusion'].get('reasons', []))
+        ex = b['executive']
+        for k, label in [('recommendation', '总监建议'), ('alternative', '更好的方向'), ('mvp_focus', 'MVP主攻')]:
+            out.extend(['', '**' + label + '：**' + md_text(ex[k])])
+    if not (d.get('schema_version') == V6 and d.get('stress_test', {}).get('presentation') == 'investigator-six'):
+        out.extend(['', f"总监评分：{computed_score['value']:.1f}/5" + ('（暂定）' if computed_score['provisional'] else ''), ''])
+        table(['维度', '权重', '分数 / 5', '简短理由'], [[SHORT_NAMES[r['dimension']], str(WEIGHT_PERCENT[r['dimension']])+'%', r['value'] if r['value'] is not None else '未知', r['reason']] for r in d['scorecard']])
+        out.extend(['总分按所列权重相加，四舍五入到一位小数；评分是研究判断，不是成功概率；未知项仅以中性2.5计算暂定总分。', ''])
     for s in d['sections']:
         prefix = {'market': '二', 'competition': '三', 'product': '四'}[s['id']]
         out.extend(['## ' + prefix + '、' + s['title'], '', md_text(s['summary']), ''])
         refs(s)
+        if d.get('schema_version') == V6 and s['id'] == 'market':
+            out.extend(['### 关键前提的证据', '', '等级针对具体论断；A/B/C也只支持说明的范围，D/E不算验证。', ''])
+            evidence_map = {e['id']: e for e in d['evidence']}
+            assigned = set()
+            for belief in d['stress_test']['beliefs']:
+                out.extend(['#### ' + md_text(belief['claim']), ''])
+                for polarity, label in [('support', '支持'), ('oppose', '反对')]:
+                    for eid in belief[polarity + '_evidence_ids']:
+                        assigned.add(eid)
+                        e = evidence_map[eid]
+                        out.extend(['**' + label + ' · ' + e['grade'] + '：**' + md_text(e['claim']), '', '**等级理由：**' + md_text(e['grade_reason']), '', '**边界：**' + md_text(e['limitation']), ''])
+                        refs(e)
+                out.extend(['**反证查找：**' + md_text(belief['disconfirmation']['summary']), ''])
+                refs(belief['disconfirmation'])
+            other = [e for e in d['evidence'] if e['id'] not in assigned]
+            if other:
+                out.extend(['#### 其他已记录的线索', ''])
+                for e in other:
+                    out.extend(['**' + e['grade'] + ' · 线索：**' + md_text(e['claim']), '', '**等级理由：**' + md_text(e['grade_reason']), '', '**边界：**' + md_text(e['limitation']), ''])
+                    refs(e)
         for block in s['blocks']:
             out.extend(['### ' + md_text(block['title']), ''])
             if block['type'] == 'paragraph':

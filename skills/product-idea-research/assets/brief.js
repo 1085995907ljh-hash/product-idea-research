@@ -3,7 +3,8 @@
 const data=JSON.parse(document.getElementById('report-data').textContent),brief=data.briefing;
 const $=s=>document.querySelector(s),make=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 const sourceMap=new Map(data.sources.map(s=>[s.id,s])),compMap=new Map(data.competitors.map(c=>[c.id,c])),ca=data.competitive_analysis;
-const isV5=data.schema_version==='product-idea-research/v5',depth=brief.depth;
+const isV6=data.schema_version==='product-idea-research/v6',isV5=isV6||data.schema_version==='product-idea-research/v5',depth=brief.depth;
+const isSix=isV6&&data.stress_test.presentation==='investigator-six';
 const stateNames={available:'已取得材料',verified:'已核实',partial:'部分覆盖',blocked:'访问受限',unavailable:'未取得',not_run:'未开展',unknown:'未知'},roleNames={leader:'头部',similar:'最相似',new:'新进入者',adjacent:'相邻替代'};
 const short=c=>c.short_name||c.name;
 function link(text,url){const a=make('a',text);try{const u=new URL(url);if(['http:','https:'].includes(u.protocol)&&!u.username&&!u.password){a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';}}catch{}return a;}
@@ -20,22 +21,66 @@ function labeled(parent,label,text,cls=''){const p=make('p',undefined,cls);p.app
 function bullets(parent,values,empty){if(!values.length){parent.append(make('p',empty,'note'));return;}const ul=make('ul');values.forEach(v=>ul.append(make('li',v)));parent.append(ul);}
 function evidence(parent,ids){if(ids?.length){const d=fold(parent,'查阅依据');refs(d,ids);}}
 $('#meta').textContent=data.date+' · 美国市场 · '+(isV5?'摘要 + 深度研究':'约 5 分钟');$('#fixture').hidden=!data.fixture;$('#original-idea').textContent='原始想法：'+data.idea;
-const overview=chapter('overview','研究概览','01');
+const overview=chapter('overview',isV6?'研究综述':'研究概览','01');
 overview.append(make('p','30–60 秒，先看判断','eyebrow'),make('h1',data.title));
+if(isV6)renderStressTest(overview);
+else{
 const top=make('div',undefined,'overview-top'),summary=make('div'),score=make('div',undefined,'score-total');
 summary.append(make('p',{go:'值得做',conditional:'观望，收窄后再考虑',no_go:'不建议按原案做'}[data.conclusion.verdict],'verdict'),make('p',data.conclusion.summary,'chapter-summary'));
 score.append(make('span','总监评分'),make('strong',Number(data.computed_score.value).toFixed(1)));score.querySelector('strong').append(make('small',' / 5'));
 score.append(make('p',(data.computed_score.provisional?'暂定 · ':'')+'证据把握'+({high:'高',medium:'中',low:'低'}[data.computed_score.confidence]||'未知')));top.append(summary,score);overview.append(top);
 const notes=make('div',undefined,'exec-notes');
 for(const [key,label]of [['recommendation','我的建议'],['alternative','更好的方向'],['mvp_focus','MVP 主攻']]){const p=make('p');p.append(make('strong',label+'：'),document.createTextNode(brief.executive[key]));notes.append(p);}overview.append(notes);
+}
+let scoreParent=overview;
+if(isV6){const total=isSix?fold($('#overview-conclusion'),'辅助评分 · '+Number(data.computed_score.value).toFixed(1)+' / 5'):sub(overview,'overview-scores','辅助评分');total.append(make('p','总监评分 '+Number(data.computed_score.value).toFixed(1)+' / 5'+(data.computed_score.provisional?'（暂定）':'')+' · 证据把握'+({high:'高',medium:'中',low:'低'}[data.computed_score.confidence]||'未知'),'score-heading'));if(isSix)scoreParent=total;}
 const scoreGrid=make('div',undefined,'score-grid'),names={attention:'近期热度 · 20%',competition:'竞争空间 · 20%',gap:'差异化机会 · 25%',timing:'入场时机 · 10%',validation:'验证便利 · 15%',solo_cost:'个人投入 · 10%'};
-for(const r of data.scorecard){const item=make('div',undefined,'score-item'),row=make('div',undefined,'score-row'),meter=make('span',undefined,'score-meter');row.append(make('span',names[r.dimension]),make('strong',r.value===null?'未知':r.value+' / 5'));const fill=make('span');fill.style.width=r.value===null?'0':r.value/5*100+'%';meter.append(fill);item.append(row,meter,make('p',r.reason));scoreGrid.append(item);}overview.append(scoreGrid,make('p','总分按所列权重相加，四舍五入到一位小数。未知项暂按中性 2.5 计算，不代表需求中等；评分不是成功概率。','score-footnote'));
+for(const r of data.scorecard){const item=make('div',undefined,'score-item'),row=make('div',undefined,'score-row'),meter=make('span',undefined,'score-meter');row.append(make('span',names[r.dimension]),make('strong',r.value===null?'未知':r.value+' / 5'));const fill=make('span');fill.style.width=r.value===null?'0':r.value/5*100+'%';meter.append(fill);item.append(row,meter,make('p',r.reason));scoreGrid.append(item);}scoreParent.append(scoreGrid,make('p','总分按所列权重相加，四舍五入到一位小数。未知项暂按中性 2.5 计算，不代表需求中等；评分不是成功概率。','score-footnote'));
 
 for(const [i,s]of data.sections.entries()){
   const parent=chapter(s.id,s.title,String(i+2).padStart(2,'0'));parent.append(make('p',s.summary,'chapter-summary'));
+  if(isV6&&s.id==='market')renderThesisEvidence(parent);
   for(const b of s.blocks){block(parent,b);if(isV5&&s.id==='market'&&b.id==='market-social')renderSocial(parent);if(isV5&&s.id==='product'&&b.id==='product-potential')renderDirections(parent);}
   if(s.id==='market')renderTrends(parent);
   if(s.id==='competition')renderCompetition(parent);
+}
+function renderStressTest(parent){
+  if(isSix){renderSixStressTest(parent);return;}
+  const s=data.stress_test,beliefs=new Map(s.beliefs.map(b=>[b.id,b])),evidenceMap=new Map(data.evidence.map(e=>[e.id,e]));
+  const grades={A:'行为证据',B:'一手资料',C:'佐证',D:'间接指标',E:'断言/推断'},statuses={supported:'有支持',mixed:'证据冲突',unsupported:'有反证',unknown:'仍是假设'};
+  const threshold=t=>({gte:'≥',lte:'≤'}[t.operator])+t.value+' '+t.unit;
+  parent.append(make('p',data.conclusion.summary,'chapter-summary'));
+  const thesis=sub(parent,'overview-thesis','一句话论点');thesis.append(make('p',s.thesis.statement));labeled(thesis,'用户目标',s.thesis.founder_goal,'note');labeled(thesis,'当前决策',s.thesis.decision,'note');
+  const premises=sub(parent,'overview-beliefs','必须成立的前提'),list=make('ol',undefined,'belief-list');
+  for(const b of s.beliefs){const li=make('li');li.append(make('span',statuses[b.status],'belief-status'),document.createTextNode(b.claim));list.append(li);}premises.append(list);if(!s.beliefs.length)premises.append(make('p','尚未研究，不把缺失证据当成否决。','note'));
+  const observations=sub(parent,'overview-evidence','支持与反对的证据'),columns=make('div',undefined,'stress-evidence');
+  for(const [polarity,title]of [['support','支持'],['oppose','反对']]){const col=make('div');col.append(make('h4',title));const ids=[...new Set(s.beliefs.flatMap(b=>b[polarity+'_evidence_ids']))],ul=make('ul');for(const id of ids){const e=evidenceMap.get(id),li=make('li');li.append(make('strong',e.grade+' · '+grades[e.grade]+'：'),document.createTextNode(e.claim),make('p',e.limitation,'note'));ul.append(li);}if(ids.length)col.append(ul);else col.append(make('p','本轮没有足够材料，不据此证明成立或不成立。','note'));columns.append(col);}observations.append(columns);
+  const key=sub(parent,'overview-bottleneck','最可能改变决策的关键假设');key.classList.add('stress-bottleneck');
+  if(s.bottleneck){const b=s.bottleneck;key.append(make('p',beliefs.get(b.belief_id).claim,'stress-key'),make('p',b.why));labeled(key,'成立时',b.decision_if_true);labeled(key,'不成立时',b.decision_if_false);}else key.append(make('p','尚未取得足够材料选定一个关键假设。'));
+  const tests=sub(parent,'overview-tests','下一步最便宜的测试');if(s.tests.length)tests.append(make('p','以下门槛是执行前拟定的决策规则，不是行业基准或已经取得的结果。','note'));else tests.append(make('p',s.no_test_reason));
+  s.tests.forEach((t,i)=>{const article=make('article',undefined,'stress-test');article.append(make('h4','测试 '+(i+1)+'：'+t.method));labeled(article,'观察行为',t.observed_behavior);labeled(article,'通过 / 失败',t.metric+'：通过 '+threshold(t.pass_threshold)+'；失败 '+threshold(t.fail_threshold));const details=fold(article,'投入上限、取舍与中间结果');for(const [k,label]of [['inconclusive_rule','中间结果'],['failure_action','失败后'],['resource_cap','投入上限'],['selection_reason','为何选它']])labeled(details,label,t[k]);tests.append(article);});
+  if(s.adjacent){const adjacent=sub(parent,'overview-adjacent','更强的相邻方向');adjacent.append(make('p',s.adjacent.summary));}
+  const commitment=sub(parent,'overview-commitment','现在值得投入多少');commitment.classList.add('stress-commitment');const c=s.commitment;labeled(commitment,{test:'只投入小测试',invest:'有限投入',hold:'暂缓投入',stop:'停止原案'}[c.action],c.summary);labeled(commitment,'资源上限',c.cap);labeled(commitment,'追加投入的条件',c.escalation_condition);
+}
+function renderSixStressTest(parent){
+  const s=data.stress_test,c=s.commitment,measures={task_completion:'完整任务',return_use:'主动回访',stated_intent:'口头意愿',acquisition_response:'点击/获客响应',actual_payment:'实际付款',technical_reliability:'技术可靠性'},map=new Map(data.evidence.map(e=>[e.id,e]));
+  const first=sub(parent,'overview-conclusion','1）一句话结论');first.append(make('p',data.conclusion.summary,'chapter-summary'),make('p',c.summary+' 投入边界：'+c.cap+' 追加条件：'+c.escalation_condition,'note'));
+  const premises=sub(parent,'overview-beliefs','2）必须成立的前提'),ol=make('ol',undefined,'belief-list');s.beliefs.forEach(b=>ol.append(make('li',b.claim)));premises.append(ol);if(!s.beliefs.length)premises.append(make('p','尚未研究，不能把空白当作失败。','note'));
+  const observations=sub(parent,'overview-evidence','3）证据');observations.append(make('p','A是真实行为，B是一手资料，C是评论/论坛等佐证，D是间接指标，E是推断；等级仅适用于具体论断。','note'));const columns=make('div',undefined,'stress-evidence');
+  for(const [polarity,title]of [['support','支持'],['oppose','反对']]){const col=make('div');col.append(make('h4',title));const ids=[...new Set(s.beliefs.flatMap(b=>b[polarity+'_evidence_ids']))],ul=make('ul');for(const id of ids){const e=map.get(id),li=make('li',e.claim);li.append(make('p','等级 '+e.grade+'。'+e.limitation,'note'));ul.append(li);}if(ids.length)col.append(ul);else col.append(make('p','本轮没有足够材料，不据此证明成立或不成立。','note'));columns.append(col);}observations.append(columns);
+  const key=sub(parent,'overview-bottleneck','4）最可能杀死它的假设');key.classList.add('stress-bottleneck');if(s.bottleneck){const b=s.bottleneck;key.append(make('p',s.beliefs.find(r=>r.id===b.belief_id).claim,'stress-key'),make('p',b.why),make('p','若不成立：'+b.decision_if_false+' 若成立：'+b.decision_if_true));}else key.append(make('p','尚未取得足够材料选定一个决定性假设；不作致命风险判断。'));
+  const tests=sub(parent,'overview-tests','5）下一步最便宜的测试');if(s.tests.length)tests.append(make('p','门槛是执行前拟定的决策规则，不是行业基准或已经取得的结果。','note'));else tests.append(make('p',s.no_test_reason));
+  s.tests.forEach((t,i)=>{const article=make('article',undefined,'stress-test');article.append(make('h4','测试 '+String.fromCharCode(65+i)+'：'+t.method),make('p','对象/分母：'+t.sample_definition+' 时间：'+t.time_window+' 协助方式：'+t.assistance),make('p',t.observed_behavior+' 主要指标：'+t.metric+'；通过 '+threshold(t.pass_threshold)+'，失败 '+threshold(t.fail_threshold)+'。'+t.inconclusive_rule+' '+t.failure_action),make('p','本次只测'+measures[t.measures]+'；不能证明：'+t.cannot_establish,'note'));const details=fold(article,'投入上限与取舍');details.append(make('p',t.resource_cap),make('p',t.selection_reason));tests.append(article);});
+  const adjacent=sub(parent,'overview-adjacent','6）可能更强的相邻方向');if(s.adjacent)labeled(adjacent,'相对推荐',s.adjacent.summary);const h=s.adjacent_hypothesis;if(h){labeled(adjacent,'未验证的探索假设',h.summary);adjacent.append(make('p',h.why_better+' 新风险：'+h.new_risk+' 尚缺：'+h.missing_evidence));}if(!s.adjacent&&!h)adjacent.append(make('p','本轮没有足够依据提出更强的相邻方向，不为凑建议换一个故事。'));
+  function threshold(t){return({gte:'≥',lte:'≤'}[t.operator])+t.value+' '+t.unit;}
+}
+function renderThesisEvidence(parent){
+  const section=sub(parent,'market-thesis-evidence','关键前提的证据');section.append(make('p','等级针对具体论断；A/B/C也只支持说明的范围，D/E不算验证。','note'));
+  const map=new Map(data.evidence.map(e=>[e.id,e]));
+  for(const b of data.stress_test.beliefs){const article=make('article',undefined,'finding');article.append(make('h4',b.claim));for(const [polarity,label]of [['support','支持'],['oppose','反对']])for(const id of b[polarity+'_evidence_ids']){const e=map.get(id);labeled(article,label+' · '+e.grade,e.claim);labeled(article,'等级理由',e.grade_reason,'note');labeled(article,'边界',e.limitation,'note');refs(article,e.source_ids);}labeled(article,'反证查找',b.disconfirmation.summary,'note');refs(article,b.disconfirmation.source_ids);section.append(article);}
+  const assigned=new Set(data.stress_test.beliefs.flatMap(b=>[...b.support_evidence_ids,...b.oppose_evidence_ids])),other=data.evidence.filter(e=>!assigned.has(e.id));
+  if(other.length){const details=fold(section,'其他已记录的线索');for(const e of other){labeled(details,e.grade+' · 线索',e.claim);labeled(details,'等级理由',e.grade_reason,'note');labeled(details,'边界',e.limitation,'note');refs(details,e.source_ids);}}
+  if(!data.stress_test.beliefs.length)section.append(make('p','尚未开展研究，不补造证据。','note'));
 }
 function renderCompetition(parent){
   if(isV5)renderCatalog(parent);

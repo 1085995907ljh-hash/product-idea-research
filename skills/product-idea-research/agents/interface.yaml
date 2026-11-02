@@ -1,7 +1,7 @@
 interface:
   display_name: "独立开发者产品调研"
-  short_description: "深入调研美国idea：多平台需求、多词趋势、分类竞品与3–5个方向"
-  default_prompt: "使用 product-idea-research 调研我的想法，判断美国市场是否值得独立开发者进入，交付四章可视化报告、评分和建议。"
+  short_description: "六段式调研综述：具体失败机制、双向证据、便宜测试和相邻设想"
+  default_prompt: "使用 product-idea-research 全面调研我的想法。还原完整任务并比较现办法，找一个具体失败机制；以结论、前提、证据、关键假设、便宜测试、相邻方向六段回复，并交付四章可视化报告。"
 compatibility:
   canonical_format: "agent-skills"
   adapter_targets:

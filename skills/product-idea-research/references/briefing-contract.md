@@ -1,5 +1,7 @@
 # v4：四部分、五分钟产品调研
 
+维护注：本页描述v4历史结构。v6保留sections/briefing基础字段和四章，但第一章“研究综述”使用stress-test-contract.md的压力测试结构，取代本页旧概览；不把旧next_step隐藏规则或900字上限套到v6。
+
 默认schema_version=product-idea-research/v4。v3深度证据字段继续保留，见deep-data-contract.md；v1/v2/v3依原report-contract.md渲染。评分公式和六维权重不变。改版已有报告保留来源时间；未重查的部分不得称新研究。
 
 ## 同源与结构

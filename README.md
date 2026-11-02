@@ -6,7 +6,9 @@
 
 输出一份可以直接阅读的交互式 HTML，同时提供 Markdown 和研究数据。概览争取 30–60 秒读完，五分钟抓住主线；想深入时，再展开来源与细节。
 
-`v0.6.0` · 标准 Agent Skills 目录 · Codex / Claude Code / 其他兼容编码 Agent
+`v0.7.1` · 标准 Agent Skills 目录 · Codex / Claude Code / 其他兼容编码 Agent
+
+主Agent先还原完整任务并比较现有办法，把“能开发”与“值得做产品”分开。新综述固定六段：一句话结论、必要前提、支持/反对证据、最可能杀死它的假设、低成本测试、可能更强的相邻方向。测试区分回访、口头意愿、点击和实际付款；弱相邻设想允许提出，但明确未验证。投入与评分归第一段，后面的市场、竞品、产品研究仍保留深度。方法见[总监综合规范](skills/product-idea-research/references/director-synthesis.md)。下方截图是历史真实报告，不代表新版综述。
 
 ## 先看报告长什么样
 
@@ -64,13 +66,13 @@ npx skills add 1085995907ljh-hash/product-idea-research --skill product-idea-res
 
 不使用 Node.js 也可以安装：
 
-1. 下载 [完整目录 ZIP](dist/product-idea-research-v0.6.0.zip)，解压出 `product-idea-research/`。
+1. 下载 [完整目录 ZIP](dist/product-idea-research-v0.7.1.zip)，解压出 `product-idea-research/`。
 2. 将**整个目录**放入宿主的 Skill 目录，不能只复制 `SKILL.md`。
 3. 重新加载，在对话中调用。
 
 Claude Code 的个人目录是 `~/.claude/skills/`；当前 Skills CLI 为 Codex 使用 `~/.agents/skills/`。手动安装以宿主文档为准，避免在多个可发现目录重复安装同名 Skill。
 
-如果你的宿主明确支持「根级 SKILL.md」ZIP 导入，使用 [Flat ZIP](dist/product-idea-research-v0.6.0-flat.zip)。两个包的内容相同，只是目录层级不同；校验值见 [SHA256SUMS](dist/SHA256SUMS)。不是所有聊天产品都支持上传 Skill ZIP，安装成功也不等于获得联网、浏览器或子代理权限。
+如果你的宿主明确支持「根级 SKILL.md」ZIP 导入，使用 [Flat ZIP](dist/product-idea-research-v0.7.1-flat.zip)。两个包的内容相同，只是目录层级不同；校验值见 [SHA256SUMS](dist/SHA256SUMS)。不是所有聊天产品都支持上传 Skill ZIP，安装成功也不等于获得联网、浏览器或子代理权限。
 
 ## 运行前需要什么
 
@@ -119,10 +121,10 @@ Skill 不附账号、Cookie 或第三方服务授权，不会自动修改权限�
 
 | 章节 | 回答的问题 |
 | --- | --- |
-| **研究概览** | 能不能做、建议进入/观望/不进入、六维评分、更好方向与 MVP 主攻 |
+| **研究综述** | 一句话判断、必要前提、分级支持/反对、唯一关键假设、测试、有据相邻方向、投入建议与辅助评分 |
 | **市场调研** | 属于什么领域、市场如何演变、谁在讨论什么、需求新旧、美国用户习惯、规模与搜索走势 |
 | **竞品** | 有哪些方向的玩家、谁必须重点分析、功能差异、每款的好差评与当前竞争压力 |
-| **产品研究** | 原案潜力、3–5个有区别的方向、痛点与差异、个人投入和平台/技术可实现性 |
+| **产品研究** | 原案主攻点、零至五个有据方向或明确标注的探索假设、个人投入和平台/技术可实现性 |
 
 通常列出 15–25 款分类竞品，深入分析 8–10 款；关键词通常 8–15 个，按问题、解决方案、产品词分组。资料不足就少列并说明，不为凑数补造。
 
@@ -160,7 +162,11 @@ python3 skills/product-idea-research/scripts/report.py validate /path/to/my-rese
 python3 skills/product-idea-research/scripts/report.py render /path/to/my-research
 ```
 
-`report.py init` 只创建骨架；研究由 Agent 取证完成，脚本不会自动产生市场结论。作者修改后暂存要打包的 Skill 源码，再运行 `python3 scripts/build_release.py`；只收录 Git 跟踪的分发资源，生成可复现的两种 ZIP 与 SHA256。旧 v1–v4 报告继续使用历史渲染契约。
+`report.py init` 只创建骨架；研究由 Agent 取证完成，脚本不会自动产生市场结论。作者修改后暂存要打包的 Skill 源码，再运行 `python3 scripts/build_release.py`；只收录 Git 跟踪的分发资源，生成可复现的两种 ZIP 与 SHA256。旧 v1–v5 报告继续使用历史渲染契约。
+
+新版综述的[合成阅读样例](examples/stress-test-demo/report.html)用于检查排版与导出，包含论点、必要前提、支持与反对、关键假设、测试和投入建议；其中的研究内容不是市场调研结果。
+
+v0.7.1 的[六段式网页样例](examples/director-demo/report.html)与[聊天回复样例](examples/director-demo/director-reply.md)同源生成。聊天第三节带关键来源，完整HTML/MD综述保持无链接、详细分支可点击。两个样例均为合成材料，不是市场证据。
 
 目录：`skills/product-idea-research/` 为独立安装包，`assets/examples/` 为 README 截图，`examples/reading-demo/` 为合成演示。真实研究运行目录、原始社交资料、凭据和本机审计日志不入库。
 

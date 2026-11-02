@@ -14,6 +14,7 @@ import zipfile
 from research_details import V3, expanded_sections, validate_details
 from briefing import V4, CHAPTERS, BLOCKS, initial_briefing, validate_briefing, markdown_briefing
 from deep_briefing import V5, initial_depth, validate_depth, markdown_depth
+from stress_test import V6, initial_stress_test, validate_stress_test
 
 V1 = 'product-idea-research/v1'
 V2 = 'product-idea-research/v2'
@@ -51,7 +52,7 @@ def url_ok(value):
 
 
 def is_v2(data):
-    return data.get('schema_version') in (V2, V3, V4, V5)
+    return data.get('schema_version') in (V2, V3, V4, V5, V6)
 
 
 def score(data):
@@ -120,8 +121,8 @@ def validate(data):
         return ['research.json须为对象']
     version = data.get('schema_version')
     v2 = is_v2(data)
-    v3 = version in (V3, V4, V5)
-    need(version in (V1, V2, V3, V4, V5), 'schema_version错误')
+    v3 = version in (V3, V4, V5, V6)
+    need(version in (V1, V2, V3, V4, V5, V6), 'schema_version错误')
     for key in ('sources', 'evidence', 'competitors', 'trends', 'glossary', 'scorecard', 'sections'):
         need(key in data, '缺少内容数组 ' + key)
     for k in ['title', 'date', 'idea', 'scope']:
@@ -168,7 +169,7 @@ def validate(data):
     sections = records(data, 'sections')
     unique_ids(sections, '章节')
     sids = [s.get('id') for s in sections]
-    if version in (V4, V5):
+    if version in (V4, V5, V6):
         need(sids == [s for s, _ in CHAPTERS], 'v4/v5正文须按市场、竞品、产品排列')
     elif v2:
         need(sids == [s for s, _ in V2_SECTIONS], 'v2须恰好六章且按约定顺序排列')
@@ -267,7 +268,9 @@ def validate(data):
                 need(text(decision.get(key)), 'decision缺少 ' + key)
             refs(decision)
         directions = records(data, 'directions')
-        if version == V5:
+        if version == V6:
+            need(0 <= len(directions) <= 5, 'v6 directions须零至五条，不强凑相邻方向')
+        elif version == V5:
             need(0 <= len(directions) <= 5, 'v5 directions须零至五条；真实完成报告须三至五条')
             if data.get('status') == 'complete' and not data.get('fixture'):
                 need(3 <= len(directions) <= 5, 'v5真实完成报告directions须三至五条')
@@ -312,9 +315,11 @@ def validate(data):
         errors.extend(validate_details(data))
     if version == V4:
         errors.extend(validate_briefing(data))
-    elif version == V5:
-        errors.extend(validate_briefing(data, limits=(12, 20, 80), prefix='v5'))
+    elif version in (V5, V6):
+        errors.extend(validate_briefing(data, limits=(12, 20, 80), prefix=version.rsplit('/', 1)[-1]))
         errors.extend(validate_depth(data))
+        if version == V6:
+            errors.extend(validate_stress_test(data))
     return errors
 
 
@@ -329,7 +334,7 @@ def cell(value):
 
 
 def markdown(d, sections=None):
-    if d.get('schema_version') == V5:
+    if d.get('schema_version') in (V5, V6):
         return markdown_depth(d, score(d), md_text, computed_directions(d))
     if d.get('schema_version') == V4:
         return markdown_briefing(d, score(d), md_text)
@@ -466,9 +471,12 @@ def render(root):
     errors = validate(d)
     if errors:
         raise ValueError('\n'.join(errors))
-    sections = d['sections'] if d['schema_version'] in (V4, V5) else expanded_sections(d)
+    sections = d['sections'] if d['schema_version'] in (V4, V5, V6) else expanded_sections(d)
     md = markdown(d, sections=sections)
     (root / 'research.md').write_text(md, encoding='utf-8')
+    if d['schema_version'] == V6 and d['stress_test'].get('presentation') == 'investigator-six':
+        from stress_test import director_reply
+        (root / 'director-reply.md').write_text(director_reply(d, md_text), encoding='utf-8')
     # Explicit allowlist: local diagnostics, credentials, raw private files never auto-published.
     buf = io.BytesIO()
     with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as z:
@@ -480,19 +488,19 @@ def render(root):
     if is_v2(d):
         payload['computed_directions'] = computed_directions(d)
     assets = Path(__file__).resolve().parents[1] / 'assets'
-    stem = 'brief' if d['schema_version'] in (V4, V5) else 'report'
+    stem = 'brief' if d['schema_version'] in (V4, V5, V6) else 'report'
     values = dict(TITLE=escape(d['title']), DATA=json.dumps(payload, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026'), CSS=(assets/(stem+'.css')).read_text(encoding='utf-8'), JS=(assets/(stem+'.js')).read_text(encoding='utf-8'))
     page = re.sub(r'@@(TITLE|DATA|CSS|JS)@@', lambda m: values[m[1]], (assets/(stem+'.html')).read_text(encoding='utf-8'))
     (root / 'report.html').write_text(page, encoding='utf-8')
     return root / 'report.html'
 
 
-def initial(title, idea, schema_version=V5):
-    if schema_version in ('v1', 'v2', 'v3', 'v4', 'v5'):
+def initial(title, idea, schema_version=V6):
+    if schema_version in ('v1', 'v2', 'v3', 'v4', 'v5', 'v6'):
         schema_version = 'product-idea-research/' + schema_version
-    if schema_version not in (V1, V2, V3, V4, V5):
+    if schema_version not in (V1, V2, V3, V4, V5, V6):
         raise ValueError('schema_version错误')
-    v2 = schema_version in (V2, V3, V4, V5)
+    v2 = schema_version in (V2, V3, V4, V5, V6)
     weights = V2_WEIGHTS if v2 else WEIGHTS
     def blank_scores():
         return [dict(dimension=k, value=None, reason='未研究', source_ids=[], **({'certainty': 'unknown'} if v2 else {})) for k in weights]
@@ -500,17 +508,19 @@ def initial(title, idea, schema_version=V5):
     if v2:
         data['decision'] = dict(recommendation='尚未开展研究，先收集证据再作入场判断。', mvp_focus='尚未确定，等待需求与缺口研究。', main_risk='核心假设和证据覆盖尚未核实。', next_step='先查找目标用户的近期需求表达与反证。', source_ids=[])
         data['directions'] = [dict(id='pending-research', name='待研究的相邻方向', stance='explore', target_user='尚未核实。', change='尚未研究相邻切口。', mvp_focus='等待需求证据后界定。', why='当前没有依据比较方向，评分均为未知。', first_test='先收集真实用户表达，判断是否值得提出方向假设。', main_risk='尚无已核实的方向依据。', source_ids=[], scorecard=blank_scores())]
-    if schema_version in (V3, V4, V5):
+    if schema_version in (V3, V4, V5, V6):
         data['directions'] = []
         data['no_directions_reason'] = '尚未研究真实痛点与现有替代，当前没有依据提出相邻方向。'
         data['social_research'] = dict(summary='尚未开展跨平台研究；未知不代表没有需求。', platforms=[], posts=[], pains=[])
         data['need_assessment'] = dict(classification='unknown', novelty_reason='尚未核实任务、情境与解法的区别。', demand_summary='尚未取得真实用户表达，不能判断需求是否成立。', existing_solutions='现有产品与人工替代尚未核实。', satisfaction='现有办法的满足程度尚未核实。', remaining_gap='尚未核实具体缺口。', original_action='先补充需求与竞争证据，再判断原案是否值得验证。', source_ids=[])
         data['competitive_analysis'] = dict(categories=[], feature_competitor_ids=[], features=[], reviews=[], review_coverage=[], review_themes=[], mindshare=dict(status='insufficient', summary='尚未取得可去重的自然需求讨论样本，不计算品牌提及比例。', eligible_post_ids=[], limitation='尚未核实检索来源、作者与品牌提及；缺数据不代表没有品牌认知。'))
-    if schema_version in (V4, V5):
+    if schema_version in (V4, V5, V6):
         data['briefing'] = initial_briefing()
         data['sections'] = [dict(id=k, title=t, status='not_run', summary='尚未开展研究。', blocks=[dict(id=bid, title=title, type='paragraph', text='尚未研究，不作判断。', source_ids=[]) for bid, title in BLOCKS[k]], source_ids=[]) for k, t in CHAPTERS]
-        if schema_version == V5:
+        if schema_version in (V5, V6):
             data['briefing']['depth'] = initial_depth()
+    if schema_version == V6:
+        data['stress_test'] = initial_stress_test()
     return data
 
 
@@ -520,7 +530,7 @@ def main():
     parser.add_argument('root', type=Path)
     parser.add_argument('--title')
     parser.add_argument('--idea')
-    parser.add_argument('--schema-version', choices=['v1', 'v2', 'v3', 'v4', 'v5', V1, V2, V3, V4, V5], default='v5', help='init内容格式，默认v5四部分深度报告；v1–v4用于历史格式')
+    parser.add_argument('--schema-version', choices=['v1', 'v2', 'v3', 'v4', 'v5', 'v6', V1, V2, V3, V4, V5, V6], default='v6', help='init内容格式，默认v6决策综述与深度研究；v1–v5用于历史格式')
     args = parser.parse_args()
     root = args.root.resolve()
     if args.action == 'init':

@@ -10,7 +10,7 @@ import unittest
 import zipfile
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from report import V1, V2, V3, V4, V5, V2_WEIGHTS, computed_directions, expanded_sections, initial, score, validate, markdown, render
+from report import V1, V2, V3, V4, V5, V6, V2_WEIGHTS, computed_directions, expanded_sections, initial, score, validate, markdown, render
 from research_details import mindshare_counts
 
 
@@ -490,14 +490,14 @@ class V3ContractTests(unittest.TestCase):
         malformed['competitors'][0]['category_ids'] = None
         self.assertTrue(validate(malformed))
 
-    def test_cli_defaults_v5_and_does_not_overwrite_existing_research(self):
+    def test_cli_defaults_v6_and_does_not_overwrite_existing_research(self):
         script = Path(__file__).resolve().parents[1]/'scripts/report.py'
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)/'new'
             args = [sys.executable, str(script), 'init', str(root), '--title', 'Fixture', '--idea', 'Fixture idea']
             subprocess.run(args, check=True, capture_output=True)
             data = json.loads((root/'research.json').read_text())
-            self.assertEqual(data['schema_version'], V5)
+            self.assertEqual(data['schema_version'], V6)
             self.assertEqual(data['directions'], [])
             subprocess.run([sys.executable, str(script), 'validate', str(root)], check=True, capture_output=True)
             subprocess.run([sys.executable, str(script), 'render', str(root)], check=True, capture_output=True)
@@ -555,7 +555,7 @@ class V4BriefingTests(unittest.TestCase):
 
 class V5DepthTests(unittest.TestCase):
     def setUp(self):
-        self.d = initial('Fixture only', 'Not market evidence')
+        self.d = initial('Fixture only', 'Not market evidence', V5)
         self.d['fixture'] = True
 
     def populated(self):

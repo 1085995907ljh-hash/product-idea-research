@@ -1,5 +1,7 @@
 {
  "should_trigger":[
+  {"text":"帮这个美国App想法做压力测试，找出关键假设，告诉我现在值得投入多少。","family":"stress-test"},
+  {"text":"全面调查这个idea，给支持和反对证据、最便宜的测试及投入建议。","family":"director-thesis"},
   {"text":"我想做AI摄影App，先调研美国市场是否有机会。","family":"short-idea"},
   {"text":"帮我验证一个面向美国用户的旅行打包产品想法。","family":"short-idea"},
   {"text":"深入核验这份research里的市场、竞品与付费假设。","family":"existing-research"},
@@ -24,6 +26,7 @@
   {"text":"帮我部署现有网站到Cloudflare。","family":"engineering"}
  ],
  "near_neighbor":[
+  {"text":"解释一下这篇文章里关键假设和压力测试的意思，不需要调研。","family":"method-explanation"},
   {"text":"调研不做了，只改稿，让这段话更自然。","family":"editing"},
   {"text":"研究已经通过，现在只写PRD。","family":"prd-only"},
   {"text":"生成这个产品的UI设计截图。","family":"ui-only"},
